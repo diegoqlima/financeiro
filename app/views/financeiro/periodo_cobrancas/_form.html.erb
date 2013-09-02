@@ -1,0 +1,25 @@
+<%= form_for(@periodo_cobranca) do |f| %>
+  <% if @periodo_cobranca.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@periodo_cobranca.errors.count, "error") %> prohibited this periodo_cobranca from being saved:</h2>
+
+      <ul>
+      <% @periodo_cobranca.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_field :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :meses %><br>
+    <%= f.text_field :meses %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

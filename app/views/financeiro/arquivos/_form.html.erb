@@ -1,0 +1,29 @@
+<%= form_for(@arquivo) do |f| %>
+  <% if @arquivo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@arquivo.errors.count, "error") %> prohibited this arquivo from being saved:</h2>
+
+      <ul>
+      <% @arquivo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipo_arquivo %><br>
+    <%= f.select :tipo_arquivo_id, Financeiro::TipoArquivo.all.map{|tipo| [tipo.descricao, tipo.id]}, {include_blank: ''} %>
+  </div>
+  <div class="field">
+    <%= f.label :Periodo %><br>
+    <%= date_field(nil, :periodo) %>
+  </div>
+  <div class="field">
+    <%= f.label :remessa %><br>
+    <%= f.text_field :remessa %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

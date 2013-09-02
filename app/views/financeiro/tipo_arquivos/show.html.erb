@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @tipo_arquivo.descricao %>
+</p>
+
+<p>
+  <strong>Meio pagamento:</strong>
+  <%= @tipo_arquivo.meio_pagamento %>
+</p>
+
+<p>
+  <strong>Entrada:</strong>
+  <%= @tipo_arquivo.entrada %>
+</p>
+
+<p>
+  <strong>Spec:</strong>
+  <%= @tipo_arquivo.spec %>
+</p>
+
+<%= link_to 'Edit', edit_tipo_arquivo_path(@tipo_arquivo) %> |
+<%= link_to 'Back', tipo_arquivos_path %>

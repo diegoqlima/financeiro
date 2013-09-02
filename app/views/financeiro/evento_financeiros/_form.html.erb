@@ -1,0 +1,41 @@
+<%= form_for(@evento_financeiro) do |f| %>
+  <% if @evento_financeiro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@evento_financeiro.errors.count, "error") %> prohibited this evento_financeiro from being saved:</h2>
+
+      <ul>
+      <% @evento_financeiro.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :inicio %><br>
+    <%= f.date_field :inicio %>
+  </div>
+  <div class="field">
+    <%= f.label :fim %><br>
+    <%= f.date_field :fim %>
+  </div>
+  <div class="field">
+    <%= f.label :valor %><br>
+    <%= f.text_field :valor%>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_evento_financeiro %><br>
+	<%= f.select :tipo_evento_financeiro_id, Financeiro::TipoEventoFinanceiro.all.map{|tipo| [tipo.descricao, tipo.id]}, {include_blank: ''} %>
+  </div>
+  <div class="field">
+    <%= f.label :meio_pagamento %><br>
+    <%= f.select :meio_pagamento_id, Financeiro::MeioPagamento.all.map{|tipo| [tipo.descricao, tipo.id]}, {include_blank: ''} %>
+  </div>
+  <div class="field">
+    <%= f.label :periodo_cobranca %><br>
+    <%= f.select :periodo_cobranca_id, Financeiro::PeriodoCobranca.all.map{|tipo| [tipo.descricao, tipo.id]}, {include_blank: ''} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

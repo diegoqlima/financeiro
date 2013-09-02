@@ -1,0 +1,29 @@
+<h1>Listing bancos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Nome</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bancos.each do |banco| %>
+      <tr>
+        <td><%= banco.codigo %></td>
+        <td><%= banco.nome %></td>
+        <td><%= link_to 'Show', banco %></td>
+        <td><%= link_to 'Edit', edit_banco_path(banco) %></td>
+        <td><%= link_to 'Destroy', banco, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Banco', new_banco_path %>

@@ -1,0 +1,29 @@
+<h1>Listing periodo_cobrancas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descricao</th>
+      <th>Tipo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @periodo_cobrancas.each do |periodo_cobranca| %>
+      <tr>
+        <td><%= periodo_cobranca.descricao %></td>
+        <td><%= periodo_cobranca.tipo %></td>
+        <td><%= link_to 'Show', periodo_cobranca %></td>
+        <td><%= link_to 'Edit', edit_periodo_cobranca_path(periodo_cobranca) %></td>
+        <td><%= link_to 'Destroy', periodo_cobranca, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Periodo cobranca', new_periodo_cobranca_path %>

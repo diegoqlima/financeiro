@@ -1,0 +1,33 @@
+<h1>Listing contrato_cobrancas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Conta</th>
+      <th>Numero contrato</th>
+      <th>Ativo</th>
+      <th>Carteira</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contrato_cobrancas.each do |contrato_cobranca| %>
+      <tr>
+        <td><%= contrato_cobranca.conta %></td>
+        <td><%= contrato_cobranca.numero_contrato %></td>
+        <td><%= contrato_cobranca.ativo %></td>
+        <td><%= contrato_cobranca.carteira %></td>
+        <td><%= link_to 'Show', contrato_cobranca %></td>
+        <td><%= link_to 'Edit', edit_contrato_cobranca_path(contrato_cobranca) %></td>
+        <td><%= link_to 'Destroy', contrato_cobranca, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contrato cobranca', new_contrato_cobranca_path %>

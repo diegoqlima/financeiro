@@ -1,0 +1,41 @@
+<%= form_for(@pagamento) do |f| %>
+  <% if @pagamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pagamento.errors.count, "error") %> prohibited this pagamento from being saved:</h2>
+
+      <ul>
+      <% @pagamento.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br>
+    <%= f.number_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :valor %><br>
+    <%= f.text_field :valor %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :data_vencimento %><br>
+    <%= f.date_select :data_vencimento %>
+  </div>
+  <div class="field">
+    <%= f.label :data_pagamento %><br>
+    <%= f.date_select :data_pagamento %>
+  </div>
+  <div class="field">
+    <%= f.label :evento_financeiro %><br>
+    <%= f.text_field :evento_financeiro %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

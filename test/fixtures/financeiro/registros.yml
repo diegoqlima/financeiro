@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  objeto: MyText
+  pagamento_id: 
+
+two:
+  objeto: MyText
+  pagamento_id: 

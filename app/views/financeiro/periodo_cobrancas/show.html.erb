@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @periodo_cobranca.descricao %>
+</p>
+
+<p>
+  <strong>Meses:</strong>
+  <%= @periodo_cobranca.meses %>
+</p>
+
+<%= link_to 'Edit', edit_periodo_cobranca_path(@periodo_cobranca) %> |
+<%= link_to 'Back', periodo_cobrancas_path %>

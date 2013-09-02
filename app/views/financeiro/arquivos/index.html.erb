@@ -1,0 +1,31 @@
+<h1>Listing arquivos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo arquivo</th>
+      <th>Parametros</th>
+      <th>Nome</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @arquivos.each do |arquivo| %>
+      <tr>
+        <td><%= arquivo.tipo_arquivo %></td>
+        <td><%= arquivo.parametros %></td>
+        <td><%= arquivo.nome %></td>
+        <td><%= link_to 'Show', arquivo %></td>
+        <td><%= link_to 'Edit', edit_arquivo_path(arquivo) %></td>
+        <td><%= link_to 'Destroy', arquivo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Arquivo', new_arquivo_path %>

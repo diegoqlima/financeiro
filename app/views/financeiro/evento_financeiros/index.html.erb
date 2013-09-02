@@ -1,0 +1,31 @@
+<h1>Listing evento_financeiros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Data</th>
+      <th>Tipo evento financeiro</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @evento_financeiros.each do |evento_financeiro| %>
+      <tr>
+        <td><%= evento_financeiro.id %></td>
+        <td><%= evento_financeiro.data %></td>
+        <td><%= evento_financeiro.tipo_evento_financeiro %></td>
+        <td><%= link_to 'Show', evento_financeiro %></td>
+        <td><%= link_to 'Edit', edit_evento_financeiro_path(evento_financeiro) %></td>
+        <td><%= link_to 'Destroy', evento_financeiro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Evento financeiro', new_evento_financeiro_path %>

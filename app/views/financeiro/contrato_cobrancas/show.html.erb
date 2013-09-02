@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Conta:</strong>
+  <%= @contrato_cobranca.conta %>
+</p>
+
+<p>
+  <strong>Numero contrato:</strong>
+  <%= @contrato_cobranca.numero_contrato %>
+</p>
+
+<p>
+  <strong>Ativo:</strong>
+  <%= @contrato_cobranca.ativo %>
+</p>
+
+<p>
+  <strong>Carteira:</strong>
+  <%= @contrato_cobranca.carteira %>
+</p>
+
+<%= link_to 'Edit', edit_contrato_cobranca_path(@contrato_cobranca) %> |
+<%= link_to 'Back', contrato_cobrancas_path %>

@@ -1,0 +1,29 @@
+<h1>Listing conta</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Banco</th>
+      <th>Agencia</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @conta.each do |conta| %>
+      <tr>
+        <td><%= conta.banco %></td>
+        <td><%= conta.agencia %></td>
+        <td><%= link_to 'Show', conta %></td>
+        <td><%= link_to 'Edit', edit_conta_path(conta) %></td>
+        <td><%= link_to 'Destroy', conta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Conta', new_conta_path %>

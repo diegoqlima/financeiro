@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Financeiro::Bradesco::Critica - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/utils/financeiro/bradesco.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-mensagem_processamento">#mensagem_processamento</a>
+    
+    <li ><a href="#method-i-nome">#nome</a>
+    
+    <li ><a href="#method-i-parse">#parse</a>
+    
+    <li ><a href="#method-i-pasta">#pasta</a>
+    
+    <li ><a href="#method-i-processar">#processar</a>
+    
+    <li ><a href="#method-i-valida_nome_arquivo">#valida_nome_arquivo</a>
+    
+    <li ><a href="#method-i-validar">#validar</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li class="file"><a href="../../MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/application_js.html">application.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/arquivos_js.html">arquivos.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/bancos_js.html">bancos.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/conta_js.html">conta.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/contrato_cobrancas_js.html">contrato_cobrancas.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/evento_financeiros_js.html">evento_financeiros.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/meio_pagamentos_js.html">meio_pagamentos.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/pagamentos_js.html">pagamentos.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/periodo_cobrancas_js.html">periodo_cobrancas.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/tipo_arquivos_js.html">tipo_arquivos.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/tipo_evento_financeiros_js.html">tipo_evento_financeiros.js</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/application_css.html">application.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/arquivos_css.html">arquivos.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/bancos_css.html">bancos.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/conta_css.html">conta.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/contrato_cobrancas_css.html">contrato_cobrancas.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/evento_financeiros_css.html">evento_financeiros.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/meio_pagamentos_css.html">meio_pagamentos.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/pagamentos_css.html">pagamentos.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/periodo_cobrancas_css.html">periodo_cobrancas.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/tipo_arquivos_css.html">tipo_arquivos.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/tipo_evento_financeiros_css.html">tipo_evento_financeiros.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/scaffold_css.html">scaffold.css</a>
+  
+    <li class="file"><a href="../../doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="../../financeiro_gemspec.html">financeiro.gemspec</a>
+  
+    <li class="file"><a href="../../lib/tasks/financeiro_tasks_rake.html">financeiro_tasks.rake</a>
+  
+    <li class="file"><a href="../../test/dummy/README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../../test/dummy/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../../test/dummy/app/assets/javascripts/active_admin_js_coffee.html">active_admin.js.coffee</a>
+  
+    <li class="file"><a href="../../test/dummy/app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li class="file"><a href="../../test/dummy/app/assets/stylesheets/active_admin_css_scss.html">active_admin.css.scss</a>
+  
+    <li class="file"><a href="../../test/dummy/app/assets/stylesheets/application_css.html">application.css</a>
+  
+    <li class="file"><a href="../../test/dummy/config_ru.html">config.ru</a>
+  
+    <li class="file"><a href="../../test/dummy/db/production_sqlite3.html">production.sqlite3</a>
+  
+    <li class="file"><a href="../../test/dummy/db/test_sqlite3.html">test.sqlite3</a>
+  
+    <li class="file"><a href="../../test/dummy/log/development_log.html">development.log</a>
+  
+    <li class="file"><a href="../../test/dummy/public/404_html.html">404.html</a>
+  
+    <li class="file"><a href="../../test/dummy/public/422_html.html">422.html</a>
+  
+    <li class="file"><a href="../../test/dummy/public/500_html.html">500.html</a>
+  
+    <li class="file"><a href="../../test/dummy/public/favicon_ico.html">favicon.ico</a>
+  
+    <li class="file"><a href="../../test/dummy/tmp/pids/server_pid.html">server.pid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../ActiveRecord.html">ActiveRecord</a>
+  
+    <li><a href="../../ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="../../AddAssociationToEventoFinanceiros.html">AddAssociationToEventoFinanceiros</a>
+  
+    <li><a href="../../AddMeioPagamentoToFinanceiroEventoFinanceiros.html">AddMeioPagamentoToFinanceiroEventoFinanceiros</a>
+  
+    <li><a href="../../AddPeriodoCobrancaToEventoFinanceiros.html">AddPeriodoCobrancaToEventoFinanceiros</a>
+  
+    <li><a href="../../ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="../../ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="../../CreateFinanceiroArquivos.html">CreateFinanceiroArquivos</a>
+  
+    <li><a href="../../CreateFinanceiroBancos.html">CreateFinanceiroBancos</a>
+  
+    <li><a href="../../CreateFinanceiroConta.html">CreateFinanceiroConta</a>
+  
+    <li><a href="../../CreateFinanceiroContratoCobrancas.html">CreateFinanceiroContratoCobrancas</a>
+  
+    <li><a href="../../CreateFinanceiroEventoFinanceiros.html">CreateFinanceiroEventoFinanceiros</a>
+  
+    <li><a href="../../CreateFinanceiroMeioPagamentos.html">CreateFinanceiroMeioPagamentos</a>
+  
+    <li><a href="../../CreateFinanceiroPagamentos.html">CreateFinanceiroPagamentos</a>
+  
+    <li><a href="../../CreateFinanceiroPeriodoCobrancas.html">CreateFinanceiroPeriodoCobrancas</a>
+  
+    <li><a href="../../CreateFinanceiroTipoArquivos.html">CreateFinanceiroTipoArquivos</a>
+  
+    <li><a href="../../CreateFinanceiroTipoEventoFinanceiros.html">CreateFinanceiroTipoEventoFinanceiros</a>
+  
+    <li><a href="../../Dummy.html">Dummy</a>
+  
+    <li><a href="../../Dummy/Application.html">Dummy::Application</a>
+  
+    <li><a href="../../Financeiro.html">Financeiro</a>
+  
+    <li><a href="../../Financeiro/AdminUser.html">Financeiro::AdminUser</a>
+  
+    <li><a href="../../Financeiro/AdminUserTest.html">Financeiro::AdminUserTest</a>
+  
+    <li><a href="../../Financeiro/ApplicationController.html">Financeiro::ApplicationController</a>
+  
+    <li><a href="../../Financeiro/ApplicationHelper.html">Financeiro::ApplicationHelper</a>
+  
+    <li><a href="../../Financeiro/Arquivo.html">Financeiro::Arquivo</a>
+  
+    <li><a href="../../Financeiro/ArquivoTest.html">Financeiro::ArquivoTest</a>
+  
+    <li><a href="../../Financeiro/ArquivosController.html">Financeiro::ArquivosController</a>
+  
+    <li><a href="../../Financeiro/ArquivosControllerTest.html">Financeiro::ArquivosControllerTest</a>
+  
+    <li><a href="../../Financeiro/ArquivosHelper.html">Financeiro::ArquivosHelper</a>
+  
+    <li><a href="../../Financeiro/ArquivosHelperTest.html">Financeiro::ArquivosHelperTest</a>
+  
+    <li><a href="../../Financeiro/Banco.html">Financeiro::Banco</a>
+  
+    <li><a href="../../Financeiro/BancoBrasil.html">Financeiro::BancoBrasil</a>
+  
+    <li><a href="../../Financeiro/BancoBrasil/Critica.html">Financeiro::BancoBrasil::Critica</a>
+  
+    <li><a href="../../Financeiro/BancoMercantil.html">Financeiro::BancoMercantil</a>
+  
+    <li><a href="../../Financeiro/BancoMercantil/Remessa.html">Financeiro::BancoMercantil::Remessa</a>
+  
+    <li><a href="../../Financeiro/BancoMercantil/Retorno.html">Financeiro::BancoMercantil::Retorno</a>
+  
+    <li><a href="../../Financeiro/BancoTest.html">Financeiro::BancoTest</a>
+  
+    <li><a href="../../Financeiro/BancosController.html">Financeiro::BancosController</a>
+  
+    <li><a href="../../Financeiro/BancosControllerTest.html">Financeiro::BancosControllerTest</a>
+  
+    <li><a href="../../Financeiro/BancosHelper.html">Financeiro::BancosHelper</a>
+  
+    <li><a href="../../Financeiro/BancosHelperTest.html">Financeiro::BancosHelperTest</a>
+  
+    <li><a href="../../Financeiro/Bradesco.html">Financeiro::Bradesco</a>
+  
+    <li><a href="../../Financeiro/Bradesco/Critica.html">Financeiro::Bradesco::Critica</a>
+  
+    <li><a href="../../Financeiro/Bradesco/Remessa.html">Financeiro::Bradesco::Remessa</a>
+  
+    <li><a href="../../Financeiro/Conta.html">Financeiro::Conta</a>
+  
+    <li><a href="../../Financeiro/ContaController.html">Financeiro::ContaController</a>
+  
+    <li><a href="../../Financeiro/ContaControllerTest.html">Financeiro::ContaControllerTest</a>
+  
+    <li><a href="../../Financeiro/ContaHelper.html">Financeiro::ContaHelper</a>
+  
+    <li><a href="../../Financeiro/ContaHelperTest.html">Financeiro::ContaHelperTest</a>
+  
+    <li><a href="../../Financeiro/ContaTest.html">Financeiro::ContaTest</a>
+  
+    <li><a href="../../Financeiro/ContratoCobranca.html">Financeiro::ContratoCobranca</a>
+  
+    <li><a href="../../Financeiro/ContratoCobrancaTest.html">Financeiro::ContratoCobrancaTest</a>
+  
+    <li><a href="../../Financeiro/ContratoCobrancasController.html">Financeiro::ContratoCobrancasController</a>
+  
+    <li><a href="../../Financeiro/ContratoCobrancasControllerTest.html">Financeiro::ContratoCobrancasControllerTest</a>
+  
+    <li><a href="../../Financeiro/ContratoCobrancasHelper.html">Financeiro::ContratoCobrancasHelper</a>
+  
+    <li><a href="../../Financeiro/ContratoCobrancasHelperTest.html">Financeiro::ContratoCobrancasHelperTest</a>
+  
+    <li><a href="../../Financeiro/Engine.html">Financeiro::Engine</a>
+  
+    <li><a href="../../Financeiro/EventoFinanceiro.html">Financeiro::EventoFinanceiro</a>
+  
+    <li><a href="../../Financeiro/EventoFinanceiroTest.html">Financeiro::EventoFinanceiroTest</a>
+  
+    <li><a href="../../Financeiro/EventoFinanceirosController.html">Financeiro::EventoFinanceirosController</a>
+  
+    <li><a href="../../Financeiro/EventoFinanceirosControllerTest.html">Financeiro::EventoFinanceirosControllerTest</a>
+  
+    <li><a href="../../Financeiro/EventoFinanceirosHelper.html">Financeiro::EventoFinanceirosHelper</a>
+  
+    <li><a href="../../Financeiro/EventoFinanceirosHelperTest.html">Financeiro::EventoFinanceirosHelperTest</a>
+  
+    <li><a href="../../Financeiro/FinanceiroService.html">Financeiro::FinanceiroService</a>
+  
+    <li><a href="../../Financeiro/MeioPagamento.html">Financeiro::MeioPagamento</a>
+  
+    <li><a href="../../Financeiro/MeioPagamentoTest.html">Financeiro::MeioPagamentoTest</a>
+  
+    <li><a href="../../Financeiro/MeioPagamentosController.html">Financeiro::MeioPagamentosController</a>
+  
+    <li><a href="../../Financeiro/MeioPagamentosControllerTest.html">Financeiro::MeioPagamentosControllerTest</a>
+  
+    <li><a href="../../Financeiro/MeioPagamentosHelper.html">Financeiro::MeioPagamentosHelper</a>
+  
+    <li><a href="../../Financeiro/MeioPagamentosHelperTest.html">Financeiro::MeioPagamentosHelperTest</a>
+  
+    <li><a href="../../Financeiro/Pagamento.html">Financeiro::Pagamento</a>
+  
+    <li><a href="../../Financeiro/PagamentoTest.html">Financeiro::PagamentoTest</a>
+  
+    <li><a href="../../Financeiro/PagamentosController.html">Financeiro::PagamentosController</a>
+  
+    <li><a href="../../Financeiro/PagamentosControllerTest.html">Financeiro::PagamentosControllerTest</a>
+  
+    <li><a href="../../Financeiro/PagamentosHelper.html">Financeiro::PagamentosHelper</a>
+  
+    <li><a href="../../Financeiro/PagamentosHelperTest.html">Financeiro::PagamentosHelperTest</a>
+  
+    <li><a href="../../Financeiro/PeriodoCobranca.html">Financeiro::PeriodoCobranca</a>
+  
+    <li><a href="../../Financeiro/PeriodoCobrancaTest.html">Financeiro::PeriodoCobrancaTest</a>
+  
+    <li><a href="../../Financeiro/PeriodoCobrancasController.html">Financeiro::PeriodoCobrancasController</a>
+  
+    <li><a href="../../Financeiro/PeriodoCobrancasControllerTest.html">Financeiro::PeriodoCobrancasControllerTest</a>
+  
+    <li><a href="../../Financeiro/PeriodoCobrancasHelper.html">Financeiro::PeriodoCobrancasHelper</a>
+  
+    <li><a href="../../Financeiro/PeriodoCobrancasHelperTest.html">Financeiro::PeriodoCobrancasHelperTest</a>
+  
+    <li><a href="../../Financeiro/Remessa.html">Financeiro::Remessa</a>
+  
+    <li><a href="../../Financeiro/TipoArquivo.html">Financeiro::TipoArquivo</a>
+  
+    <li><a href="../../Financeiro/TipoArquivoTest.html">Financeiro::TipoArquivoTest</a>
+  
+    <li><a href="../../Financeiro/TipoArquivosController.html">Financeiro::TipoArquivosController</a>
+  
+    <li><a href="../../Financeiro/TipoArquivosControllerTest.html">Financeiro::TipoArquivosControllerTest</a>
+  
+    <li><a href="../../Financeiro/TipoArquivosHelper.html">Financeiro::TipoArquivosHelper</a>
+  
+    <li><a href="../../Financeiro/TipoArquivosHelperTest.html">Financeiro::TipoArquivosHelperTest</a>
+  
+    <li><a href="../../Financeiro/TipoEventoFinanceiro.html">Financeiro::TipoEventoFinanceiro</a>
+  
+    <li><a href="../../Financeiro/TipoEventoFinanceiroTest.html">Financeiro::TipoEventoFinanceiroTest</a>
+  
+    <li><a href="../../Financeiro/TipoEventoFinanceirosController.html">Financeiro::TipoEventoFinanceirosController</a>
+  
+    <li><a href="../../Financeiro/TipoEventoFinanceirosControllerTest.html">Financeiro::TipoEventoFinanceirosControllerTest</a>
+  
+    <li><a href="../../Financeiro/TipoEventoFinanceirosHelper.html">Financeiro::TipoEventoFinanceirosHelper</a>
+  
+    <li><a href="../../Financeiro/TipoEventoFinanceirosHelperTest.html">Financeiro::TipoEventoFinanceirosHelperTest</a>
+  
+    <li><a href="../../FinanceiroTest.html">FinanceiroTest</a>
+  
+    <li><a href="../../Logger.html">Logger</a>
+  
+    <li><a href="../../NavigationTest.html">NavigationTest</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../TipoArquivo.html">TipoArquivo</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Financeiro::Bradesco::Critica</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="REGISTRO">REGISTRO
+        
+        <dd class="description">
+        
+      
+        <dt id="STATE">STATE
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-mensagem_processamento" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mensagem_processamento</span><span
+            class="method-args">(arquivo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mensagem_processamento-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/bradesco.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mensagem_processamento</span>(<span class="ruby-identifier">arquivo</span>)
+   <span class="ruby-identifier">total_processado</span> = <span class="ruby-value">0</span>
+   <span class="ruby-identifier">total_diff</span> = <span class="ruby-value">0</span>
+
+     <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">arquivo</span>,<span class="ruby-string">&#39;r&#39;</span>).<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^1/</span>
+          <span class="ruby-identifier">r</span> = <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">line</span>)
+          <span class="ruby-identifier">p</span> = <span class="ruby-constant">Pagamento</span>.<span class="ruby-identifier">find_by_id</span>(<span class="ruby-identifier">r</span>[<span class="ruby-value">:nosso_numero</span>].<span class="ruby-identifier">to_i</span>)
+          <span class="ruby-keyword">if</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">nil?</span>)
+            <span class="ruby-identifier">total_diff</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+            <span class="ruby-keyword">next</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">total_processado</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment"># Quantidade de Pagamentos Processados:</span>
+      <span class="ruby-comment"># Quantidade de Pagamentos Diff:</span>
+      <span class="ruby-comment"># Total de Pagamentos Processados:</span>
+
+   <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;Qtde. Pagamentos Processados: #{total_processado}_Qtde. Pagamentos Diff: #{total_diff}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mensagem_processamento-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mensagem_processamento-method -->
+
+    
+      <div id="method-i-nome" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nome</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="nome-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/bradesco.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nome</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nome-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nome-method -->
+
+    
+      <div id="method-i-parse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse</span><span
+            class="method-args">(linha)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/bradesco.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">linha</span>)
+  <span class="ruby-identifier">h</span> = {}
+  <span class="ruby-identifier">p</span> = <span class="ruby-value">0</span>
+  <span class="ruby-constant">REGISTRO</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">h</span>[<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]] = <span class="ruby-identifier">linha</span>[<span class="ruby-identifier">p</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">p</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>])]
+    <span class="ruby-identifier">p</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">h</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse-method -->
+
+    
+      <div id="method-i-pasta" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pasta</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pasta-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/bradesco.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pasta</span>
+  <span class="ruby-string">&quot;bradesco/critica&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pasta-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pasta-method -->
+
+    
+      <div id="method-i-processar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">processar</span><span
+            class="method-args">(arquivo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="processar-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/bradesco.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">processar</span>(<span class="ruby-identifier">arquivo</span>)
+   <span class="ruby-identifier">erros</span> = <span class="ruby-identifier">validar</span>(<span class="ruby-identifier">arquivo</span>)
+   <span class="ruby-keyword">if</span>(<span class="ruby-identifier">erros</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+     <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">arquivo</span>,<span class="ruby-string">&#39;r&#39;</span>).<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^F/</span>
+          <span class="ruby-identifier">r</span> = <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">line</span>)
+          <span class="ruby-identifier">p</span> = <span class="ruby-constant">Pagamento</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">r</span>[<span class="ruby-value">:uso_empresa</span>].<span class="ruby-identifier">to_i</span>)
+          <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;******************codigo:#{r[:codigo_retorno]}&quot;</span>
+          <span class="ruby-identifier">p</span>.<span class="ruby-identifier">state</span> = <span class="ruby-identifier">r</span>[<span class="ruby-value">:codigo_retorno</span>].<span class="ruby-identifier">to_i</span>
+          <span class="ruby-identifier">p</span>.<span class="ruby-identifier">sub_state</span> = <span class="ruby-identifier">r</span>[<span class="ruby-value">:codigo_retorno</span>].<span class="ruby-identifier">to_i</span>
+          <span class="ruby-identifier">p</span>.<span class="ruby-identifier">registros</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:objeto</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">JSON</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-identifier">r</span>))
+          <span class="ruby-identifier">p</span>.<span class="ruby-identifier">save</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">return</span> <span class="ruby-identifier">erros</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- processar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- processar-method -->
+
+    
+      <div id="method-i-valida_nome_arquivo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">valida_nome_arquivo</span><span
+            class="method-args">(nome)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="valida_nome_arquivo-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/bradesco.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">valida_nome_arquivo</span>(<span class="ruby-identifier">nome</span>)
+  <span class="ruby-comment"># &quot;Nome do arquivo inválido&quot; unless nome =~ /TCO1\.PSFD\.MOVCDR\.T00238\.O00017\.D[0-9]{6,6}\.txt/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- valida_nome_arquivo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- valida_nome_arquivo-method -->
+
+    
+      <div id="method-i-validar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">validar</span><span
+            class="method-args">(arquivo)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="validar-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/bradesco.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">validar</span>(<span class="ruby-identifier">arquivo</span>)
+  <span class="ruby-ivar">@errors</span> = []
+  <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>;
+  <span class="ruby-identifier">quantidade_registros</span> = <span class="ruby-value">2</span>
+  <span class="ruby-identifier">valor_total</span> = <span class="ruby-value">0</span>
+
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">arquivo</span>,<span class="ruby-string">&#39;r&#39;</span>).<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">chomp</span>.<span class="ruby-identifier">present?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">line</span>.<span class="ruby-identifier">starts_with?</span>(<span class="ruby-string">&quot;VALOR&quot;</span>)
+      <span class="ruby-comment"># line.strip!</span>
+      <span class="ruby-identifier">tipo_registro</span> = <span class="ruby-identifier">line</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">1</span>]
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">tipo_registro</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;A&#39;</span>
+          <span class="ruby-ivar">@errors</span>.<span class="ruby-identifier">push</span>({<span class="ruby-value">:i</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">i</span>, <span class="ruby-value">:linha</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">line</span>, <span class="ruby-value">:msg</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Header invalido&quot;</span> }) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/A[0-9].{20}.{20}\d{3}.{20}\d{8}\d{6}\d{2}DEBITO AUTOMATICO.{52}/</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;F&#39;</span>
+            <span class="ruby-identifier">r</span> = <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">line</span>)
+            <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;******************codigo:#{r[:codigo_retorno]}&quot;</span>
+            <span class="ruby-ivar">@errors</span>.<span class="ruby-identifier">push</span>({<span class="ruby-value">:i</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">i</span>, <span class="ruby-value">:linha</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">line</span>, <span class="ruby-value">:msg</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Pagamento não encontrado: #{r[:uso_empresa].to_i}&quot;</span>}) <span class="ruby-keyword">unless</span> <span class="ruby-constant">Pagamento</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;id=?&quot;</span>,<span class="ruby-identifier">r</span>[<span class="ruby-value">:uso_empresa</span>].<span class="ruby-identifier">to_i</span>).<span class="ruby-identifier">first</span>
+            <span class="ruby-identifier">quantidade_registros</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>
+            <span class="ruby-identifier">valor_total</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">:valor_debito</span>].<span class="ruby-identifier">to_i</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;Z&#39;</span>
+          <span class="ruby-ivar">@errors</span>.<span class="ruby-identifier">push</span>({<span class="ruby-value">:i</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">i</span>, <span class="ruby-value">:linha</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">line</span>, <span class="ruby-value">:msg</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Numero de registros no trailer não bate com o numero de registros do arquivo. Esperado:#{line[1..6].to_i}  - Encontrado:#{quantidade_registros}&quot;</span>}) <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">6</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">quantidade_registros</span>
+          <span class="ruby-ivar">@errors</span>.<span class="ruby-identifier">push</span>({<span class="ruby-value">:i</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">i</span>, <span class="ruby-value">:linha</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">line</span>, <span class="ruby-value">:msg</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Valor total dos registros no trailer não bate com soma dos registros do arquivo. Esperado:#{line[7..23].to_i} - Encontrado: #{valor_total}&quot;</span>}) <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>[<span class="ruby-value">7</span><span class="ruby-operator">..</span><span class="ruby-value">23</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">valor_total</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-ivar">@errors</span>.<span class="ruby-identifier">push</span>({<span class="ruby-value">:i</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, <span class="ruby-value">:linha</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">line</span>, <span class="ruby-value">:msg</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Tipo de registro desconhecido&quot;</span> })
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">i</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@errors</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- validar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- validar-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

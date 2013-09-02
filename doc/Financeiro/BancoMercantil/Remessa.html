@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Financeiro::BancoMercantil::Remessa - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/utils/financeiro/mercantil.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-aceite">#aceite</a>
+    
+    <li ><a href="#method-i-agencia">#agencia</a>
+    
+    <li ><a href="#method-i-body">#body</a>
+    
+    <li ><a href="#method-i-body_line">#body_line</a>
+    
+    <li ><a href="#method-i-cedente">#cedente</a>
+    
+    <li ><a href="#method-i-cnpj_cedente">#cnpj_cedente</a>
+    
+    <li ><a href="#method-i-codigo_cedente">#codigo_cedente</a>
+    
+    <li ><a href="#method-i-dados_sacado">#dados_sacado</a>
+    
+    <li ><a href="#method-i-digito_nosso_numero">#digito_nosso_numero</a>
+    
+    <li ><a href="#method-i-especie_documento">#especie_documento</a>
+    
+    <li ><a href="#method-i-form">#form</a>
+    
+    <li ><a href="#method-i-gerar">#gerar</a>
+    
+    <li ><a href="#method-i-header">#header</a>
+    
+    <li ><a href="#method-i-indicador_ano">#indicador_ano</a>
+    
+    <li ><a href="#method-i-inject">#inject</a>
+    
+    <li ><a href="#method-i-instrucao_codificada">#instrucao_codificada</a>
+    
+    <li ><a href="#method-i-instrucoes_bancarias">#instrucoes_bancarias</a>
+    
+    <li ><a href="#method-i-instrucoes_sacado">#instrucoes_sacado</a>
+    
+    <li ><a href="#method-i-lote">#lote</a>
+    
+    <li ><a href="#method-i-mensagem_sacado">#mensagem_sacado</a>
+    
+    <li ><a href="#method-i-nome_arquivo">#nome_arquivo</a>
+    
+    <li ><a href="#method-i-nosso_numero">#nosso_numero</a>
+    
+    <li ><a href="#method-i-numero_carteira">#numero_carteira</a>
+    
+    <li ><a href="#method-i-pasta">#pasta</a>
+    
+    <li ><a href="#method-i-quantidade_moeda">#quantidade_moeda</a>
+    
+    <li ><a href="#method-i-trailler">#trailler</a>
+    
+    <li ><a href="#method-i-valor_documento">#valor_documento</a>
+    
+    <li ><a href="#method-i-vencimento">#vencimento</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li class="file"><a href="../../MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/application_js.html">application.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/arquivos_js.html">arquivos.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/bancos_js.html">bancos.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/conta_js.html">conta.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/contrato_cobrancas_js.html">contrato_cobrancas.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/evento_financeiros_js.html">evento_financeiros.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/meio_pagamentos_js.html">meio_pagamentos.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/pagamentos_js.html">pagamentos.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/periodo_cobrancas_js.html">periodo_cobrancas.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/tipo_arquivos_js.html">tipo_arquivos.js</a>
+  
+    <li class="file"><a href="../../app/assets/javascripts/financeiro/tipo_evento_financeiros_js.html">tipo_evento_financeiros.js</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/application_css.html">application.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/arquivos_css.html">arquivos.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/bancos_css.html">bancos.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/conta_css.html">conta.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/contrato_cobrancas_css.html">contrato_cobrancas.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/evento_financeiros_css.html">evento_financeiros.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/meio_pagamentos_css.html">meio_pagamentos.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/pagamentos_css.html">pagamentos.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/periodo_cobrancas_css.html">periodo_cobrancas.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/tipo_arquivos_css.html">tipo_arquivos.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/financeiro/tipo_evento_financeiros_css.html">tipo_evento_financeiros.css</a>
+  
+    <li class="file"><a href="../../app/assets/stylesheets/scaffold_css.html">scaffold.css</a>
+  
+    <li class="file"><a href="../../doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="../../financeiro_gemspec.html">financeiro.gemspec</a>
+  
+    <li class="file"><a href="../../lib/tasks/financeiro_tasks_rake.html">financeiro_tasks.rake</a>
+  
+    <li class="file"><a href="../../test/dummy/README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../../test/dummy/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../../test/dummy/app/assets/javascripts/active_admin_js_coffee.html">active_admin.js.coffee</a>
+  
+    <li class="file"><a href="../../test/dummy/app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li class="file"><a href="../../test/dummy/app/assets/stylesheets/active_admin_css_scss.html">active_admin.css.scss</a>
+  
+    <li class="file"><a href="../../test/dummy/app/assets/stylesheets/application_css.html">application.css</a>
+  
+    <li class="file"><a href="../../test/dummy/config_ru.html">config.ru</a>
+  
+    <li class="file"><a href="../../test/dummy/db/production_sqlite3.html">production.sqlite3</a>
+  
+    <li class="file"><a href="../../test/dummy/db/test_sqlite3.html">test.sqlite3</a>
+  
+    <li class="file"><a href="../../test/dummy/log/development_log.html">development.log</a>
+  
+    <li class="file"><a href="../../test/dummy/public/404_html.html">404.html</a>
+  
+    <li class="file"><a href="../../test/dummy/public/422_html.html">422.html</a>
+  
+    <li class="file"><a href="../../test/dummy/public/500_html.html">500.html</a>
+  
+    <li class="file"><a href="../../test/dummy/public/favicon_ico.html">favicon.ico</a>
+  
+    <li class="file"><a href="../../test/dummy/tmp/pids/server_pid.html">server.pid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../ActiveRecord.html">ActiveRecord</a>
+  
+    <li><a href="../../ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="../../AddAssociationToEventoFinanceiros.html">AddAssociationToEventoFinanceiros</a>
+  
+    <li><a href="../../AddMeioPagamentoToFinanceiroEventoFinanceiros.html">AddMeioPagamentoToFinanceiroEventoFinanceiros</a>
+  
+    <li><a href="../../AddPeriodoCobrancaToEventoFinanceiros.html">AddPeriodoCobrancaToEventoFinanceiros</a>
+  
+    <li><a href="../../ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="../../ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="../../CreateFinanceiroArquivos.html">CreateFinanceiroArquivos</a>
+  
+    <li><a href="../../CreateFinanceiroBancos.html">CreateFinanceiroBancos</a>
+  
+    <li><a href="../../CreateFinanceiroConta.html">CreateFinanceiroConta</a>
+  
+    <li><a href="../../CreateFinanceiroContratoCobrancas.html">CreateFinanceiroContratoCobrancas</a>
+  
+    <li><a href="../../CreateFinanceiroEventoFinanceiros.html">CreateFinanceiroEventoFinanceiros</a>
+  
+    <li><a href="../../CreateFinanceiroMeioPagamentos.html">CreateFinanceiroMeioPagamentos</a>
+  
+    <li><a href="../../CreateFinanceiroPagamentos.html">CreateFinanceiroPagamentos</a>
+  
+    <li><a href="../../CreateFinanceiroPeriodoCobrancas.html">CreateFinanceiroPeriodoCobrancas</a>
+  
+    <li><a href="../../CreateFinanceiroTipoArquivos.html">CreateFinanceiroTipoArquivos</a>
+  
+    <li><a href="../../CreateFinanceiroTipoEventoFinanceiros.html">CreateFinanceiroTipoEventoFinanceiros</a>
+  
+    <li><a href="../../Dummy.html">Dummy</a>
+  
+    <li><a href="../../Dummy/Application.html">Dummy::Application</a>
+  
+    <li><a href="../../Financeiro.html">Financeiro</a>
+  
+    <li><a href="../../Financeiro/AdminUser.html">Financeiro::AdminUser</a>
+  
+    <li><a href="../../Financeiro/AdminUserTest.html">Financeiro::AdminUserTest</a>
+  
+    <li><a href="../../Financeiro/ApplicationController.html">Financeiro::ApplicationController</a>
+  
+    <li><a href="../../Financeiro/ApplicationHelper.html">Financeiro::ApplicationHelper</a>
+  
+    <li><a href="../../Financeiro/Arquivo.html">Financeiro::Arquivo</a>
+  
+    <li><a href="../../Financeiro/ArquivoTest.html">Financeiro::ArquivoTest</a>
+  
+    <li><a href="../../Financeiro/ArquivosController.html">Financeiro::ArquivosController</a>
+  
+    <li><a href="../../Financeiro/ArquivosControllerTest.html">Financeiro::ArquivosControllerTest</a>
+  
+    <li><a href="../../Financeiro/ArquivosHelper.html">Financeiro::ArquivosHelper</a>
+  
+    <li><a href="../../Financeiro/ArquivosHelperTest.html">Financeiro::ArquivosHelperTest</a>
+  
+    <li><a href="../../Financeiro/Banco.html">Financeiro::Banco</a>
+  
+    <li><a href="../../Financeiro/BancoBrasil.html">Financeiro::BancoBrasil</a>
+  
+    <li><a href="../../Financeiro/BancoBrasil/Critica.html">Financeiro::BancoBrasil::Critica</a>
+  
+    <li><a href="../../Financeiro/BancoMercantil.html">Financeiro::BancoMercantil</a>
+  
+    <li><a href="../../Financeiro/BancoMercantil/Remessa.html">Financeiro::BancoMercantil::Remessa</a>
+  
+    <li><a href="../../Financeiro/BancoMercantil/Retorno.html">Financeiro::BancoMercantil::Retorno</a>
+  
+    <li><a href="../../Financeiro/BancoTest.html">Financeiro::BancoTest</a>
+  
+    <li><a href="../../Financeiro/BancosController.html">Financeiro::BancosController</a>
+  
+    <li><a href="../../Financeiro/BancosControllerTest.html">Financeiro::BancosControllerTest</a>
+  
+    <li><a href="../../Financeiro/BancosHelper.html">Financeiro::BancosHelper</a>
+  
+    <li><a href="../../Financeiro/BancosHelperTest.html">Financeiro::BancosHelperTest</a>
+  
+    <li><a href="../../Financeiro/Bradesco.html">Financeiro::Bradesco</a>
+  
+    <li><a href="../../Financeiro/Bradesco/Critica.html">Financeiro::Bradesco::Critica</a>
+  
+    <li><a href="../../Financeiro/Bradesco/Remessa.html">Financeiro::Bradesco::Remessa</a>
+  
+    <li><a href="../../Financeiro/Conta.html">Financeiro::Conta</a>
+  
+    <li><a href="../../Financeiro/ContaController.html">Financeiro::ContaController</a>
+  
+    <li><a href="../../Financeiro/ContaControllerTest.html">Financeiro::ContaControllerTest</a>
+  
+    <li><a href="../../Financeiro/ContaHelper.html">Financeiro::ContaHelper</a>
+  
+    <li><a href="../../Financeiro/ContaHelperTest.html">Financeiro::ContaHelperTest</a>
+  
+    <li><a href="../../Financeiro/ContaTest.html">Financeiro::ContaTest</a>
+  
+    <li><a href="../../Financeiro/ContratoCobranca.html">Financeiro::ContratoCobranca</a>
+  
+    <li><a href="../../Financeiro/ContratoCobrancaTest.html">Financeiro::ContratoCobrancaTest</a>
+  
+    <li><a href="../../Financeiro/ContratoCobrancasController.html">Financeiro::ContratoCobrancasController</a>
+  
+    <li><a href="../../Financeiro/ContratoCobrancasControllerTest.html">Financeiro::ContratoCobrancasControllerTest</a>
+  
+    <li><a href="../../Financeiro/ContratoCobrancasHelper.html">Financeiro::ContratoCobrancasHelper</a>
+  
+    <li><a href="../../Financeiro/ContratoCobrancasHelperTest.html">Financeiro::ContratoCobrancasHelperTest</a>
+  
+    <li><a href="../../Financeiro/Engine.html">Financeiro::Engine</a>
+  
+    <li><a href="../../Financeiro/EventoFinanceiro.html">Financeiro::EventoFinanceiro</a>
+  
+    <li><a href="../../Financeiro/EventoFinanceiroTest.html">Financeiro::EventoFinanceiroTest</a>
+  
+    <li><a href="../../Financeiro/EventoFinanceirosController.html">Financeiro::EventoFinanceirosController</a>
+  
+    <li><a href="../../Financeiro/EventoFinanceirosControllerTest.html">Financeiro::EventoFinanceirosControllerTest</a>
+  
+    <li><a href="../../Financeiro/EventoFinanceirosHelper.html">Financeiro::EventoFinanceirosHelper</a>
+  
+    <li><a href="../../Financeiro/EventoFinanceirosHelperTest.html">Financeiro::EventoFinanceirosHelperTest</a>
+  
+    <li><a href="../../Financeiro/FinanceiroService.html">Financeiro::FinanceiroService</a>
+  
+    <li><a href="../../Financeiro/MeioPagamento.html">Financeiro::MeioPagamento</a>
+  
+    <li><a href="../../Financeiro/MeioPagamentoTest.html">Financeiro::MeioPagamentoTest</a>
+  
+    <li><a href="../../Financeiro/MeioPagamentosController.html">Financeiro::MeioPagamentosController</a>
+  
+    <li><a href="../../Financeiro/MeioPagamentosControllerTest.html">Financeiro::MeioPagamentosControllerTest</a>
+  
+    <li><a href="../../Financeiro/MeioPagamentosHelper.html">Financeiro::MeioPagamentosHelper</a>
+  
+    <li><a href="../../Financeiro/MeioPagamentosHelperTest.html">Financeiro::MeioPagamentosHelperTest</a>
+  
+    <li><a href="../../Financeiro/Pagamento.html">Financeiro::Pagamento</a>
+  
+    <li><a href="../../Financeiro/PagamentoTest.html">Financeiro::PagamentoTest</a>
+  
+    <li><a href="../../Financeiro/PagamentosController.html">Financeiro::PagamentosController</a>
+  
+    <li><a href="../../Financeiro/PagamentosControllerTest.html">Financeiro::PagamentosControllerTest</a>
+  
+    <li><a href="../../Financeiro/PagamentosHelper.html">Financeiro::PagamentosHelper</a>
+  
+    <li><a href="../../Financeiro/PagamentosHelperTest.html">Financeiro::PagamentosHelperTest</a>
+  
+    <li><a href="../../Financeiro/PeriodoCobranca.html">Financeiro::PeriodoCobranca</a>
+  
+    <li><a href="../../Financeiro/PeriodoCobrancaTest.html">Financeiro::PeriodoCobrancaTest</a>
+  
+    <li><a href="../../Financeiro/PeriodoCobrancasController.html">Financeiro::PeriodoCobrancasController</a>
+  
+    <li><a href="../../Financeiro/PeriodoCobrancasControllerTest.html">Financeiro::PeriodoCobrancasControllerTest</a>
+  
+    <li><a href="../../Financeiro/PeriodoCobrancasHelper.html">Financeiro::PeriodoCobrancasHelper</a>
+  
+    <li><a href="../../Financeiro/PeriodoCobrancasHelperTest.html">Financeiro::PeriodoCobrancasHelperTest</a>
+  
+    <li><a href="../../Financeiro/Remessa.html">Financeiro::Remessa</a>
+  
+    <li><a href="../../Financeiro/TipoArquivo.html">Financeiro::TipoArquivo</a>
+  
+    <li><a href="../../Financeiro/TipoArquivoTest.html">Financeiro::TipoArquivoTest</a>
+  
+    <li><a href="../../Financeiro/TipoArquivosController.html">Financeiro::TipoArquivosController</a>
+  
+    <li><a href="../../Financeiro/TipoArquivosControllerTest.html">Financeiro::TipoArquivosControllerTest</a>
+  
+    <li><a href="../../Financeiro/TipoArquivosHelper.html">Financeiro::TipoArquivosHelper</a>
+  
+    <li><a href="../../Financeiro/TipoArquivosHelperTest.html">Financeiro::TipoArquivosHelperTest</a>
+  
+    <li><a href="../../Financeiro/TipoEventoFinanceiro.html">Financeiro::TipoEventoFinanceiro</a>
+  
+    <li><a href="../../Financeiro/TipoEventoFinanceiroTest.html">Financeiro::TipoEventoFinanceiroTest</a>
+  
+    <li><a href="../../Financeiro/TipoEventoFinanceirosController.html">Financeiro::TipoEventoFinanceirosController</a>
+  
+    <li><a href="../../Financeiro/TipoEventoFinanceirosControllerTest.html">Financeiro::TipoEventoFinanceirosControllerTest</a>
+  
+    <li><a href="../../Financeiro/TipoEventoFinanceirosHelper.html">Financeiro::TipoEventoFinanceirosHelper</a>
+  
+    <li><a href="../../Financeiro/TipoEventoFinanceirosHelperTest.html">Financeiro::TipoEventoFinanceirosHelperTest</a>
+  
+    <li><a href="../../FinanceiroTest.html">FinanceiroTest</a>
+  
+    <li><a href="../../Logger.html">Logger</a>
+  
+    <li><a href="../../NavigationTest.html">NavigationTest</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../TipoArquivo.html">TipoArquivo</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Financeiro::BancoMercantil::Remessa</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-aceite" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">aceite</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="aceite-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 394</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">aceite</span>
+  <span class="ruby-string">&quot;N&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- aceite-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- aceite-method -->
+
+    
+      <div id="method-i-agencia" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">agencia</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="agencia-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 428</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">agencia</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span>.<span class="ruby-identifier">conta</span>.<span class="ruby-identifier">agencia</span>.<span class="ruby-identifier">to_f</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">4</span>,<span class="ruby-value">0</span>) <span class="ruby-operator">:</span> <span class="ruby-value">0</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">4</span>,<span class="ruby-value">0</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- agencia-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- agencia-method -->
+
+    
+      <div id="method-i-body" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">body</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="body-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 291</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">body</span>
+  <span class="ruby-identifier">boleto</span> = <span class="ruby-constant">MeioPagamento</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;nome = &#39;boleto&#39;&quot;</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">id</span>
+  <span class="ruby-identifier">pesquisa_contrato_cobranca</span> = <span class="ruby-ivar">@contrato_cobranca</span>.<span class="ruby-identifier">present?</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot; and contribuicoes.contrato_cobranca_id = #{@contrato_cobranca}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-constant">Pagamento</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:contribuicao</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">:unidade</span>,<span class="ruby-value">:pessoa</span>,<span class="ruby-value">:meio_pagamento</span>,<span class="ruby-value">:tipo_contribuicao</span>]).
+            <span class="ruby-identifier">where</span>(<span class="ruby-node">&quot;contribuicoes.meio_pagamento_id = #{boleto} #{pesquisa_contrato_cobranca} and data_referencia &gt;= ? and data_referencia &lt;= ? and pagamentos.state is null&quot;</span>,
+                  <span class="ruby-ivar">@inicio</span>.<span class="ruby-identifier">beginning_of_day</span>, <span class="ruby-ivar">@fim</span>.<span class="ruby-identifier">end_of_day</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pagamento</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">inject</span>(<span class="ruby-identifier">pagamento</span>)
+    <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">body_line</span>(<span class="ruby-identifier">pagamento</span>))
+    <span class="ruby-ivar">@registros</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-ivar">@valor_total</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">pagamento</span>.<span class="ruby-identifier">valor</span> <span class="ruby-operator">*</span> <span class="ruby-value">100</span>).<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- body-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- body-method -->
+
+    
+      <div id="method-i-body_line" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">body_line</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="body_line-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">body_line</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-identifier">str</span>  = <span class="ruby-node">&quot;#{obj.cedente.as_campo(40)}#{obj.dados_sacado}&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{DateTime.now.strftime(&#39;%d%m%Y&#39;)}#{obj.vencimento.strftime(&#39;%d%m%Y&#39;)}&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{obj.nosso_numero}#{obj.digito_nosso_numero}&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{obj.valor_documento.as_campo(13,2)}#{obj.numero_carteira}&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{MOEDA}#{obj.quantidade_moeda}&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{obj.especie_documento}#{obj.aceite}&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{obj.instrucoes_bancarias}&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{obj.instrucoes_sacado.as_campo(120)}&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{obj.mensagem_sacado.as_campo}&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{obj.agencia.as_campo(4)}#{obj.codigo_cedente.as_campo(9)}&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{obj.cnpj_cedente.as_campo(14)}#{obj.indicador_ano.as_campo(1)}&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{obj.instrucao_codificada.as_campo(4)}#{BRANCO.as_campo(7)}\r\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- body_line-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- body_line-method -->
+
+    
+      <div id="method-i-cedente" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cedente</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cedente-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 328</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cedente</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">instituicao</span>.<span class="ruby-identifier">nome</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">remover_acentos</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cedente-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cedente-method -->
+
+    
+      <div id="method-i-cnpj_cedente" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cnpj_cedente</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cnpj_cedente-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 436</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cnpj_cedente</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span>.<span class="ruby-identifier">conta</span>.<span class="ruby-identifier">cnpj</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\.|\/|\-|\s/</span>,<span class="ruby-string">&#39;&#39;</span>).<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">14</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cnpj_cedente-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cnpj_cedente-method -->
+
+    
+      <div id="method-i-codigo_cedente" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">codigo_cedente</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="codigo_cedente-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 432</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">codigo_cedente</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span>.<span class="ruby-identifier">numero_contrato</span>.<span class="ruby-identifier">to_f</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">9</span>,<span class="ruby-value">0</span>) <span class="ruby-operator">:</span> <span class="ruby-value">0</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">9</span>,<span class="ruby-value">0</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- codigo_cedente-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- codigo_cedente-method -->
+
+    
+      <div id="method-i-dados_sacado" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dados_sacado</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dados_sacado-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 332</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dados_sacado</span>
+  <span class="ruby-identifier">dados</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">cidade_uf</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cidade</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cidade</span>.<span class="ruby-identifier">nome</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">15</span>) <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">15</span>)
+  <span class="ruby-identifier">cidade_uf</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cidade</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cidade</span>.<span class="ruby-identifier">estado</span>.<span class="ruby-identifier">sigla</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">2</span>)  <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">2</span>)
+  <span class="ruby-comment"># NOME - 35</span>
+  <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">nome</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">nome</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">35</span>) <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">35</span>)
+  <span class="ruby-comment"># ENDERECO - 40</span>
+  <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">endereco_minimo</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">40</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">endereco</span>.<span class="ruby-identifier">blank?</span>
+    <span class="ruby-comment"># BAIRRO - 12</span>
+    <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">endereco_cobranca_bairro</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">endereco_cobranca_bairro</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">12</span>) <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">12</span>)
+    <span class="ruby-comment"># CIDADE - 15 e  UF - 2</span>
+    <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">cidade_uf</span>
+    <span class="ruby-comment"># CEP - 8</span>
+    <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">endereco_cobranca_cep</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">endereco_cobranca_cep</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">8</span>) <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">8</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># BAIRRO - 12</span>
+    <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">bairro</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">bairro</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">12</span>) <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">12</span>)
+    <span class="ruby-comment"># CIDADE - 15 e  UF - 2</span>
+    <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">cidade_uf</span>
+    <span class="ruby-comment"># CEP - 8</span>
+    <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cep</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cep</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">8</span>) <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">8</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># REGISTRO - 6 + CAMPO LIVRE - 20</span>
+  <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-value">0</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">6</span>,<span class="ruby-value">0</span>) <span class="ruby-operator">+</span> <span class="ruby-constant">CAMPO_LIVRE_20</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot; &quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">5</span>)
+  <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cpf</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cpf</span>.<span class="ruby-identifier">to_i</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">15</span>,<span class="ruby-value">0</span>) <span class="ruby-operator">:</span> <span class="ruby-value">0</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">15</span>,<span class="ruby-value">0</span>)
+  <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; &quot;</span>
+  <span class="ruby-identifier">dados</span>.<span class="ruby-identifier">remover_acentos</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dados_sacado-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dados_sacado-method -->
+
+    
+      <div id="method-i-digito_nosso_numero" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">digito_nosso_numero</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="digito_nosso_numero-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 374</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">digito_nosso_numero</span>
+  (<span class="ruby-identifier">agencia</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">4</span>).<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">nosso_numero</span>).<span class="ruby-identifier">modulo11_mercantil</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">valor</span><span class="ruby-operator">|</span> [<span class="ruby-value">0</span>,<span class="ruby-value">1</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">valor</span>) <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> (<span class="ruby-value">11</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">valor</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- digito_nosso_numero-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- digito_nosso_numero-method -->
+
+    
+      <div id="method-i-especie_documento" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">especie_documento</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="especie_documento-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 390</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">especie_documento</span>
+  <span class="ruby-string">&quot;OU&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- especie_documento-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- especie_documento-method -->
+
+    
+      <div id="method-i-form" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">form</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="form-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 246</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">form</span>
+  [
+    [<span class="ruby-value">:inicio</span>, <span class="ruby-string">&quot;Inicio&quot;</span>, <span class="ruby-value">:date</span>],
+    [<span class="ruby-value">:fim</span>, <span class="ruby-string">&quot;Fim&quot;</span>, <span class="ruby-value">:date</span>],
+    <span class="ruby-comment"># [:mes_referencia, &quot;Mes Referencia&quot;, :month_and_year],</span>
+    [<span class="ruby-value">:contrato_cobranca</span>, <span class="ruby-string">&quot;Contrato Cedente&quot;</span>, <span class="ruby-value">:select</span>, <span class="ruby-constant">ContratoCobranca</span>.<span class="ruby-identifier">buscar_contas_cedentes</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">c</span>.<span class="ruby-identifier">formatted_name</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">id</span>]}, [<span class="ruby-string">&quot;ContratoCobranca&quot;</span>, <span class="ruby-string">&quot;formatted_name&quot;</span>]  ]
+  ]
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- form-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- form-method -->
+
+    
+      <div id="method-i-gerar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gerar</span><span
+            class="method-args">(params)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gerar-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gerar</span>(<span class="ruby-identifier">params</span>)
+  <span class="ruby-ivar">@inicio</span> = <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;inicio(1i)&quot;</span>].<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;inicio(2i)&quot;</span>].<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;inicio(3i)&quot;</span>].<span class="ruby-identifier">to_i</span>);
+  <span class="ruby-ivar">@fim</span> = <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;fim(1i)&quot;</span>].<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;fim(2i)&quot;</span>].<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;fim(3i)&quot;</span>].<span class="ruby-identifier">to_i</span>);
+
+  <span class="ruby-comment"># @data_referencia = DateTime.new(params[&quot;mes_referencia(1i)&quot;].to_i, params[&quot;mes_referencia(2i)&quot;].to_i,1);</span>
+  <span class="ruby-ivar">@remessa</span> = <span class="ruby-identifier">params</span>[<span class="ruby-string">&#39;remessa&#39;</span>].<span class="ruby-identifier">to_i</span>
+  <span class="ruby-ivar">@contrato_cobranca</span> = <span class="ruby-identifier">params</span>[<span class="ruby-string">&#39;contrato_cobranca&#39;</span>]
+  <span class="ruby-ivar">@registros</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@valor_total</span> = <span class="ruby-value">0</span>
+
+  <span class="ruby-ivar">@buffer</span>  = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">Rails</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;/public/system/arquivos/#{pasta}/#{nome_arquivo(@remessa)}&quot;</span>, <span class="ruby-string">&quot;w:windows-1252:ascii&quot;</span>)
+
+  <span class="ruby-identifier">header</span>
+  <span class="ruby-identifier">body</span>
+  <span class="ruby-identifier">trailler</span>
+  <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">close</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- gerar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- gerar-method -->
+
+    
+      <div id="method-i-header" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">header</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="header-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 287</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">header</span>
+  <span class="ruby-string">&quot;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- header-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- header-method -->
+
+    
+      <div id="method-i-indicador_ano" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">indicador_ano</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="indicador_ano-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 440</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">indicador_ano</span>
+  <span class="ruby-string">&quot;S&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- indicador_ano-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- indicador_ano-method -->
+
+    
+      <div id="method-i-inject" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inject</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adiciona o metodo to_arquivo ao objeto corrente</p>
+          
+          
+
+          
+          <div class="method-source-code" id="inject-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 325</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inject</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword">do</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">cedente</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">instituicao</span>.<span class="ruby-identifier">nome</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">remover_acentos</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">dados_sacado</span>
+      <span class="ruby-identifier">dados</span> = <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-identifier">cidade_uf</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cidade</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cidade</span>.<span class="ruby-identifier">nome</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">15</span>) <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">15</span>)
+      <span class="ruby-identifier">cidade_uf</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cidade</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cidade</span>.<span class="ruby-identifier">estado</span>.<span class="ruby-identifier">sigla</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">2</span>)  <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">2</span>)
+      <span class="ruby-comment"># NOME - 35</span>
+      <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">nome</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">nome</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">35</span>) <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">35</span>)
+      <span class="ruby-comment"># ENDERECO - 40</span>
+      <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">endereco_minimo</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">40</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">endereco</span>.<span class="ruby-identifier">blank?</span>
+        <span class="ruby-comment"># BAIRRO - 12</span>
+        <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">endereco_cobranca_bairro</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">endereco_cobranca_bairro</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">12</span>) <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">12</span>)
+        <span class="ruby-comment"># CIDADE - 15 e  UF - 2</span>
+        <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">cidade_uf</span>
+        <span class="ruby-comment"># CEP - 8</span>
+        <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">endereco_cobranca_cep</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">endereco_cobranca_cep</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">8</span>) <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">8</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-comment"># BAIRRO - 12</span>
+        <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">bairro</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">bairro</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">12</span>) <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">12</span>)
+        <span class="ruby-comment"># CIDADE - 15 e  UF - 2</span>
+        <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">cidade_uf</span>
+        <span class="ruby-comment"># CEP - 8</span>
+        <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cep</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cep</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">8</span>) <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">8</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment"># REGISTRO - 6 + CAMPO LIVRE - 20</span>
+      <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-value">0</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">6</span>,<span class="ruby-value">0</span>) <span class="ruby-operator">+</span> <span class="ruby-constant">CAMPO_LIVRE_20</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot; &quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">5</span>)
+      <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cpf</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">cpf</span>.<span class="ruby-identifier">to_i</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">15</span>,<span class="ruby-value">0</span>) <span class="ruby-operator">:</span> <span class="ruby-value">0</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">15</span>,<span class="ruby-value">0</span>)
+      <span class="ruby-identifier">dados</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; &quot;</span>
+      <span class="ruby-identifier">dados</span>.<span class="ruby-identifier">remover_acentos</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">vencimento</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_referencia</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Formacao do nosso numero</span>
+    <span class="ruby-comment"># {XXXXXXXXXX}-{D}</span>
+    <span class="ruby-comment"># {XXXXXXXXXX} -&gt; ID DA CONTRIBUICAO</span>
+    <span class="ruby-comment"># {D} -&gt; Digito verificador mod11(Codigo da agencia cedente + ID DA CONTRIBUICAO)</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">nosso_numero</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">10</span>,<span class="ruby-value">0</span>).<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">digito_nosso_numero</span>
+      (<span class="ruby-identifier">agencia</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">4</span>).<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">nosso_numero</span>).<span class="ruby-identifier">modulo11_mercantil</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">valor</span><span class="ruby-operator">|</span> [<span class="ruby-value">0</span>,<span class="ruby-value">1</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">valor</span>) <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> (<span class="ruby-value">11</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">valor</span>) }
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">valor_documento</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">valor</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">numero_carteira</span>
+      <span class="ruby-string">&quot;06&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">quantidade_moeda</span>
+      <span class="ruby-string">&quot;000000000000000&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">especie_documento</span>
+      <span class="ruby-string">&quot;OU&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">aceite</span>
+      <span class="ruby-string">&quot;N&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">instrucoes_bancarias</span>
+      <span class="ruby-identifier">instrucoes</span> = <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span>.<span class="ruby-identifier">conta</span>.<span class="ruby-identifier">instrucoes_bancarias</span>
+        (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">5</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ix</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">instrucoes</span> <span class="ruby-operator">+=</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span>.<span class="ruby-identifier">conta</span>.<span class="ruby-identifier">instrucoes_bancarias</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">Conta</span><span class="ruby-operator">::</span><span class="ruby-constant">QUEBRA_INSTRUCAO_BANCARIA</span>)[<span class="ruby-identifier">ix</span>]).<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">70</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">instrucoes</span>.<span class="ruby-identifier">remover_acentos</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">instrucoes_sacado</span>
+      <span class="ruby-identifier">instrucoes</span> = <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span>.<span class="ruby-identifier">conta</span>.<span class="ruby-identifier">instrucoes_bancarias</span>
+        (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ix</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">instrucoes</span> <span class="ruby-operator">+=</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span>.<span class="ruby-identifier">conta</span>.<span class="ruby-identifier">instrucoes_sacado</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">Conta</span><span class="ruby-operator">::</span><span class="ruby-constant">QUEBRA_INSTRUCAO_SACADO</span>)[<span class="ruby-identifier">ix</span>]).<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">40</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">instrucoes</span>.<span class="ruby-identifier">remover_acentos</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">mensagem_sacado</span>
+      <span class="ruby-comment"># mensagem = &quot;Pagamento referente a manutencao de menores carentes assistidas pela Cidade dos Meninos Sao Vicente de Paulo.&quot;.as_campo(130)</span>
+      <span class="ruby-identifier">mensagem</span> = <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">130</span>)
+      <span class="ruby-comment"># mensagem += &quot;visite nosso site:www.redesolidariedade.org.br ou (31)3228-9236&quot;.as_campo(130)</span>
+      <span class="ruby-identifier">mensagem</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">130</span>)
+      <span class="ruby-comment"># mensagem += &quot;Ser anjo e voce ser capaz de iluminar no momento em que o outro e trevas!&quot;.as_campo(130)</span>
+      <span class="ruby-identifier">mensagem</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">130</span>)
+      <span class="ruby-identifier">mensagem</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">1560</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">agencia</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span>.<span class="ruby-identifier">conta</span>.<span class="ruby-identifier">agencia</span>.<span class="ruby-identifier">to_f</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">4</span>,<span class="ruby-value">0</span>) <span class="ruby-operator">:</span> <span class="ruby-value">0</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">4</span>,<span class="ruby-value">0</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">codigo_cedente</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span>.<span class="ruby-identifier">numero_contrato</span>.<span class="ruby-identifier">to_f</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">9</span>,<span class="ruby-value">0</span>) <span class="ruby-operator">:</span> <span class="ruby-value">0</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">9</span>,<span class="ruby-value">0</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">cnpj_cedente</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span>.<span class="ruby-identifier">conta</span>.<span class="ruby-identifier">cnpj</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\.|\/|\-|\s/</span>,<span class="ruby-string">&#39;&#39;</span>).<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">14</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">indicador_ano</span>
+      <span class="ruby-string">&quot;S&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">instrucao_codificada</span>
+      <span class="ruby-string">&quot;0000&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inject-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inject-method -->
+
+    
+      <div id="method-i-instrucao_codificada" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">instrucao_codificada</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="instrucao_codificada-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 444</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">instrucao_codificada</span>
+  <span class="ruby-string">&quot;0000&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- instrucao_codificada-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- instrucao_codificada-method -->
+
+    
+      <div id="method-i-instrucoes_bancarias" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">instrucoes_bancarias</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="instrucoes_bancarias-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 398</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">instrucoes_bancarias</span>
+  <span class="ruby-identifier">instrucoes</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span>.<span class="ruby-identifier">conta</span>.<span class="ruby-identifier">instrucoes_bancarias</span>
+    (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">5</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ix</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">instrucoes</span> <span class="ruby-operator">+=</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span>.<span class="ruby-identifier">conta</span>.<span class="ruby-identifier">instrucoes_bancarias</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">Conta</span><span class="ruby-operator">::</span><span class="ruby-constant">QUEBRA_INSTRUCAO_BANCARIA</span>)[<span class="ruby-identifier">ix</span>]).<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">70</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">instrucoes</span>.<span class="ruby-identifier">remover_acentos</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- instrucoes_bancarias-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- instrucoes_bancarias-method -->
+
+    
+      <div id="method-i-instrucoes_sacado" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">instrucoes_sacado</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="instrucoes_sacado-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 408</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">instrucoes_sacado</span>
+  <span class="ruby-identifier">instrucoes</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span>.<span class="ruby-identifier">conta</span>.<span class="ruby-identifier">instrucoes_bancarias</span>
+    (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ix</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">instrucoes</span> <span class="ruby-operator">+=</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">contrato_cobranca</span>.<span class="ruby-identifier">conta</span>.<span class="ruby-identifier">instrucoes_sacado</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">Conta</span><span class="ruby-operator">::</span><span class="ruby-constant">QUEBRA_INSTRUCAO_SACADO</span>)[<span class="ruby-identifier">ix</span>]).<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">40</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">instrucoes</span>.<span class="ruby-identifier">remover_acentos</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- instrucoes_sacado-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- instrucoes_sacado-method -->
+
+    
+      <div id="method-i-lote" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lote</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="lote-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 283</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lote</span>
+  <span class="ruby-string">&quot;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lote-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lote-method -->
+
+    
+      <div id="method-i-mensagem_sacado" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mensagem_sacado</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mensagem_sacado-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 418</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mensagem_sacado</span>
+  <span class="ruby-comment"># mensagem = &quot;Pagamento referente a manutencao de menores carentes assistidas pela Cidade dos Meninos Sao Vicente de Paulo.&quot;.as_campo(130)</span>
+  <span class="ruby-identifier">mensagem</span> = <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">130</span>)
+  <span class="ruby-comment"># mensagem += &quot;visite nosso site:www.redesolidariedade.org.br ou (31)3228-9236&quot;.as_campo(130)</span>
+  <span class="ruby-identifier">mensagem</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">130</span>)
+  <span class="ruby-comment"># mensagem += &quot;Ser anjo e voce ser capaz de iluminar no momento em que o outro e trevas!&quot;.as_campo(130)</span>
+  <span class="ruby-identifier">mensagem</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">130</span>)
+  <span class="ruby-identifier">mensagem</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">1560</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mensagem_sacado-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mensagem_sacado-method -->
+
+    
+      <div id="method-i-nome_arquivo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nome_arquivo</span><span
+            class="method-args">(remessa)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="nome_arquivo-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 279</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nome_arquivo</span>(<span class="ruby-identifier">remessa</span>)
+  <span class="ruby-node">&quot;2800GERAL.#{DateTime.now.strftime(&#39;%Y%m%d&#39;)}-#{remessa}.txt&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nome_arquivo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nome_arquivo-method -->
+
+    
+      <div id="method-i-nosso_numero" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nosso_numero</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Formacao do nosso numero {XXXXXXXXXX}-{D} {XXXXXXXXXX} -&gt; ID DA
+CONTRIBUICAO {D} -&gt; Digito verificador mod11(Codigo da agencia cedente +
+ID DA CONTRIBUICAO)</p>
+          
+          
+
+          
+          <div class="method-source-code" id="nosso_numero-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 370</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nosso_numero</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">10</span>,<span class="ruby-value">0</span>).<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nosso_numero-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nosso_numero-method -->
+
+    
+      <div id="method-i-numero_carteira" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">numero_carteira</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="numero_carteira-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 382</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">numero_carteira</span>
+  <span class="ruby-string">&quot;06&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- numero_carteira-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- numero_carteira-method -->
+
+    
+      <div id="method-i-pasta" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pasta</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pasta-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 256</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pasta</span>
+  <span class="ruby-string">&quot;mercantil/remessa&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pasta-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pasta-method -->
+
+    
+      <div id="method-i-quantidade_moeda" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">quantidade_moeda</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="quantidade_moeda-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 386</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">quantidade_moeda</span>
+  <span class="ruby-string">&quot;000000000000000&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- quantidade_moeda-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- quantidade_moeda-method -->
+
+    
+      <div id="method-i-trailler" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">trailler</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="trailler-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 319</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trailler</span>
+  <span class="ruby-string">&quot;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- trailler-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- trailler-method -->
+
+    
+      <div id="method-i-valor_documento" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">valor_documento</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="valor_documento-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 378</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">valor_documento</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">valor</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- valor_documento-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- valor_documento-method -->
+
+    
+      <div id="method-i-vencimento" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">vencimento</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="vencimento-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/mercantil.rb, line 362</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">vencimento</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_referencia</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- vencimento-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- vencimento-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

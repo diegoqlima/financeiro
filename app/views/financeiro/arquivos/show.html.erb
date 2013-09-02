@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo arquivo:</strong>
+  <%= @arquivo.tipo_arquivo %>
+</p>
+
+<p>
+  <strong>Parametros:</strong>
+  <%= @arquivo.parametros %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @arquivo.nome %>
+</p>
+
+<%= link_to 'Edit', edit_arquivo_path(@arquivo) %> |
+<%= link_to 'Back', arquivos_path %>

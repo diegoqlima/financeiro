@@ -1,0 +1,33 @@
+<%= form_for(@tipo_arquivo) do |f| %>
+  <% if @tipo_arquivo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tipo_arquivo.errors.count, "error") %> prohibited this tipo_arquivo from being saved:</h2>
+
+      <ul>
+      <% @tipo_arquivo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_field :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :meio_pagamento %><br>
+    <%= f.text_field :meio_pagamento %>
+  </div>
+  <div class="field">
+    <%= f.label :entrada %><br>
+    <%= f.check_box :entrada %>
+  </div>
+  <div class="field">
+    <%= f.label :spec %><br>
+    <%= f.text_field :spec %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

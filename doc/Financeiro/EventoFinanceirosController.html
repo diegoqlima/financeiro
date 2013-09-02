@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Financeiro::EventoFinanceirosController - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/controllers/financeiro/evento_financeiros_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ApplicationController.html">Financeiro::ApplicationController</a>
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-create">#create</a>
+    
+    <li ><a href="#method-i-destroy">#destroy</a>
+    
+    <li ><a href="#method-i-edit">#edit</a>
+    
+    <li ><a href="#method-i-index">#index</a>
+    
+    <li ><a href="#method-i-new">#new</a>
+    
+    <li ><a href="#method-i-show">#show</a>
+    
+    <li ><a href="#method-i-update">#update</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li class="file"><a href="../MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/application_js.html">application.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/arquivos_js.html">arquivos.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/bancos_js.html">bancos.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/conta_js.html">conta.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/contrato_cobrancas_js.html">contrato_cobrancas.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/evento_financeiros_js.html">evento_financeiros.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/meio_pagamentos_js.html">meio_pagamentos.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/pagamentos_js.html">pagamentos.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/periodo_cobrancas_js.html">periodo_cobrancas.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/tipo_arquivos_js.html">tipo_arquivos.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/tipo_evento_financeiros_js.html">tipo_evento_financeiros.js</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/application_css.html">application.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/arquivos_css.html">arquivos.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/bancos_css.html">bancos.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/conta_css.html">conta.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/contrato_cobrancas_css.html">contrato_cobrancas.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/evento_financeiros_css.html">evento_financeiros.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/meio_pagamentos_css.html">meio_pagamentos.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/pagamentos_css.html">pagamentos.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/periodo_cobrancas_css.html">periodo_cobrancas.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/tipo_arquivos_css.html">tipo_arquivos.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/tipo_evento_financeiros_css.html">tipo_evento_financeiros.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/scaffold_css.html">scaffold.css</a>
+  
+    <li class="file"><a href="../doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="../financeiro_gemspec.html">financeiro.gemspec</a>
+  
+    <li class="file"><a href="../lib/tasks/financeiro_tasks_rake.html">financeiro_tasks.rake</a>
+  
+    <li class="file"><a href="../test/dummy/README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../test/dummy/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../test/dummy/app/assets/javascripts/active_admin_js_coffee.html">active_admin.js.coffee</a>
+  
+    <li class="file"><a href="../test/dummy/app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li class="file"><a href="../test/dummy/app/assets/stylesheets/active_admin_css_scss.html">active_admin.css.scss</a>
+  
+    <li class="file"><a href="../test/dummy/app/assets/stylesheets/application_css.html">application.css</a>
+  
+    <li class="file"><a href="../test/dummy/config_ru.html">config.ru</a>
+  
+    <li class="file"><a href="../test/dummy/db/production_sqlite3.html">production.sqlite3</a>
+  
+    <li class="file"><a href="../test/dummy/db/test_sqlite3.html">test.sqlite3</a>
+  
+    <li class="file"><a href="../test/dummy/log/development_log.html">development.log</a>
+  
+    <li class="file"><a href="../test/dummy/public/404_html.html">404.html</a>
+  
+    <li class="file"><a href="../test/dummy/public/422_html.html">422.html</a>
+  
+    <li class="file"><a href="../test/dummy/public/500_html.html">500.html</a>
+  
+    <li class="file"><a href="../test/dummy/public/favicon_ico.html">favicon.ico</a>
+  
+    <li class="file"><a href="../test/dummy/tmp/pids/server_pid.html">server.pid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../ActiveRecord.html">ActiveRecord</a>
+  
+    <li><a href="../ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="../AddAssociationToEventoFinanceiros.html">AddAssociationToEventoFinanceiros</a>
+  
+    <li><a href="../AddMeioPagamentoToFinanceiroEventoFinanceiros.html">AddMeioPagamentoToFinanceiroEventoFinanceiros</a>
+  
+    <li><a href="../AddPeriodoCobrancaToEventoFinanceiros.html">AddPeriodoCobrancaToEventoFinanceiros</a>
+  
+    <li><a href="../ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="../ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="../CreateFinanceiroArquivos.html">CreateFinanceiroArquivos</a>
+  
+    <li><a href="../CreateFinanceiroBancos.html">CreateFinanceiroBancos</a>
+  
+    <li><a href="../CreateFinanceiroConta.html">CreateFinanceiroConta</a>
+  
+    <li><a href="../CreateFinanceiroContratoCobrancas.html">CreateFinanceiroContratoCobrancas</a>
+  
+    <li><a href="../CreateFinanceiroEventoFinanceiros.html">CreateFinanceiroEventoFinanceiros</a>
+  
+    <li><a href="../CreateFinanceiroMeioPagamentos.html">CreateFinanceiroMeioPagamentos</a>
+  
+    <li><a href="../CreateFinanceiroPagamentos.html">CreateFinanceiroPagamentos</a>
+  
+    <li><a href="../CreateFinanceiroPeriodoCobrancas.html">CreateFinanceiroPeriodoCobrancas</a>
+  
+    <li><a href="../CreateFinanceiroTipoArquivos.html">CreateFinanceiroTipoArquivos</a>
+  
+    <li><a href="../CreateFinanceiroTipoEventoFinanceiros.html">CreateFinanceiroTipoEventoFinanceiros</a>
+  
+    <li><a href="../Dummy.html">Dummy</a>
+  
+    <li><a href="../Dummy/Application.html">Dummy::Application</a>
+  
+    <li><a href="../Financeiro.html">Financeiro</a>
+  
+    <li><a href="../Financeiro/AdminUser.html">Financeiro::AdminUser</a>
+  
+    <li><a href="../Financeiro/AdminUserTest.html">Financeiro::AdminUserTest</a>
+  
+    <li><a href="../Financeiro/ApplicationController.html">Financeiro::ApplicationController</a>
+  
+    <li><a href="../Financeiro/ApplicationHelper.html">Financeiro::ApplicationHelper</a>
+  
+    <li><a href="../Financeiro/Arquivo.html">Financeiro::Arquivo</a>
+  
+    <li><a href="../Financeiro/ArquivoTest.html">Financeiro::ArquivoTest</a>
+  
+    <li><a href="../Financeiro/ArquivosController.html">Financeiro::ArquivosController</a>
+  
+    <li><a href="../Financeiro/ArquivosControllerTest.html">Financeiro::ArquivosControllerTest</a>
+  
+    <li><a href="../Financeiro/ArquivosHelper.html">Financeiro::ArquivosHelper</a>
+  
+    <li><a href="../Financeiro/ArquivosHelperTest.html">Financeiro::ArquivosHelperTest</a>
+  
+    <li><a href="../Financeiro/Banco.html">Financeiro::Banco</a>
+  
+    <li><a href="../Financeiro/BancoBrasil.html">Financeiro::BancoBrasil</a>
+  
+    <li><a href="../Financeiro/BancoBrasil/Critica.html">Financeiro::BancoBrasil::Critica</a>
+  
+    <li><a href="../Financeiro/BancoMercantil.html">Financeiro::BancoMercantil</a>
+  
+    <li><a href="../Financeiro/BancoMercantil/Remessa.html">Financeiro::BancoMercantil::Remessa</a>
+  
+    <li><a href="../Financeiro/BancoMercantil/Retorno.html">Financeiro::BancoMercantil::Retorno</a>
+  
+    <li><a href="../Financeiro/BancoTest.html">Financeiro::BancoTest</a>
+  
+    <li><a href="../Financeiro/BancosController.html">Financeiro::BancosController</a>
+  
+    <li><a href="../Financeiro/BancosControllerTest.html">Financeiro::BancosControllerTest</a>
+  
+    <li><a href="../Financeiro/BancosHelper.html">Financeiro::BancosHelper</a>
+  
+    <li><a href="../Financeiro/BancosHelperTest.html">Financeiro::BancosHelperTest</a>
+  
+    <li><a href="../Financeiro/Bradesco.html">Financeiro::Bradesco</a>
+  
+    <li><a href="../Financeiro/Bradesco/Critica.html">Financeiro::Bradesco::Critica</a>
+  
+    <li><a href="../Financeiro/Bradesco/Remessa.html">Financeiro::Bradesco::Remessa</a>
+  
+    <li><a href="../Financeiro/Conta.html">Financeiro::Conta</a>
+  
+    <li><a href="../Financeiro/ContaController.html">Financeiro::ContaController</a>
+  
+    <li><a href="../Financeiro/ContaControllerTest.html">Financeiro::ContaControllerTest</a>
+  
+    <li><a href="../Financeiro/ContaHelper.html">Financeiro::ContaHelper</a>
+  
+    <li><a href="../Financeiro/ContaHelperTest.html">Financeiro::ContaHelperTest</a>
+  
+    <li><a href="../Financeiro/ContaTest.html">Financeiro::ContaTest</a>
+  
+    <li><a href="../Financeiro/ContratoCobranca.html">Financeiro::ContratoCobranca</a>
+  
+    <li><a href="../Financeiro/ContratoCobrancaTest.html">Financeiro::ContratoCobrancaTest</a>
+  
+    <li><a href="../Financeiro/ContratoCobrancasController.html">Financeiro::ContratoCobrancasController</a>
+  
+    <li><a href="../Financeiro/ContratoCobrancasControllerTest.html">Financeiro::ContratoCobrancasControllerTest</a>
+  
+    <li><a href="../Financeiro/ContratoCobrancasHelper.html">Financeiro::ContratoCobrancasHelper</a>
+  
+    <li><a href="../Financeiro/ContratoCobrancasHelperTest.html">Financeiro::ContratoCobrancasHelperTest</a>
+  
+    <li><a href="../Financeiro/Engine.html">Financeiro::Engine</a>
+  
+    <li><a href="../Financeiro/EventoFinanceiro.html">Financeiro::EventoFinanceiro</a>
+  
+    <li><a href="../Financeiro/EventoFinanceiroTest.html">Financeiro::EventoFinanceiroTest</a>
+  
+    <li><a href="../Financeiro/EventoFinanceirosController.html">Financeiro::EventoFinanceirosController</a>
+  
+    <li><a href="../Financeiro/EventoFinanceirosControllerTest.html">Financeiro::EventoFinanceirosControllerTest</a>
+  
+    <li><a href="../Financeiro/EventoFinanceirosHelper.html">Financeiro::EventoFinanceirosHelper</a>
+  
+    <li><a href="../Financeiro/EventoFinanceirosHelperTest.html">Financeiro::EventoFinanceirosHelperTest</a>
+  
+    <li><a href="../Financeiro/FinanceiroService.html">Financeiro::FinanceiroService</a>
+  
+    <li><a href="../Financeiro/MeioPagamento.html">Financeiro::MeioPagamento</a>
+  
+    <li><a href="../Financeiro/MeioPagamentoTest.html">Financeiro::MeioPagamentoTest</a>
+  
+    <li><a href="../Financeiro/MeioPagamentosController.html">Financeiro::MeioPagamentosController</a>
+  
+    <li><a href="../Financeiro/MeioPagamentosControllerTest.html">Financeiro::MeioPagamentosControllerTest</a>
+  
+    <li><a href="../Financeiro/MeioPagamentosHelper.html">Financeiro::MeioPagamentosHelper</a>
+  
+    <li><a href="../Financeiro/MeioPagamentosHelperTest.html">Financeiro::MeioPagamentosHelperTest</a>
+  
+    <li><a href="../Financeiro/Pagamento.html">Financeiro::Pagamento</a>
+  
+    <li><a href="../Financeiro/PagamentoTest.html">Financeiro::PagamentoTest</a>
+  
+    <li><a href="../Financeiro/PagamentosController.html">Financeiro::PagamentosController</a>
+  
+    <li><a href="../Financeiro/PagamentosControllerTest.html">Financeiro::PagamentosControllerTest</a>
+  
+    <li><a href="../Financeiro/PagamentosHelper.html">Financeiro::PagamentosHelper</a>
+  
+    <li><a href="../Financeiro/PagamentosHelperTest.html">Financeiro::PagamentosHelperTest</a>
+  
+    <li><a href="../Financeiro/PeriodoCobranca.html">Financeiro::PeriodoCobranca</a>
+  
+    <li><a href="../Financeiro/PeriodoCobrancaTest.html">Financeiro::PeriodoCobrancaTest</a>
+  
+    <li><a href="../Financeiro/PeriodoCobrancasController.html">Financeiro::PeriodoCobrancasController</a>
+  
+    <li><a href="../Financeiro/PeriodoCobrancasControllerTest.html">Financeiro::PeriodoCobrancasControllerTest</a>
+  
+    <li><a href="../Financeiro/PeriodoCobrancasHelper.html">Financeiro::PeriodoCobrancasHelper</a>
+  
+    <li><a href="../Financeiro/PeriodoCobrancasHelperTest.html">Financeiro::PeriodoCobrancasHelperTest</a>
+  
+    <li><a href="../Financeiro/Remessa.html">Financeiro::Remessa</a>
+  
+    <li><a href="../Financeiro/TipoArquivo.html">Financeiro::TipoArquivo</a>
+  
+    <li><a href="../Financeiro/TipoArquivoTest.html">Financeiro::TipoArquivoTest</a>
+  
+    <li><a href="../Financeiro/TipoArquivosController.html">Financeiro::TipoArquivosController</a>
+  
+    <li><a href="../Financeiro/TipoArquivosControllerTest.html">Financeiro::TipoArquivosControllerTest</a>
+  
+    <li><a href="../Financeiro/TipoArquivosHelper.html">Financeiro::TipoArquivosHelper</a>
+  
+    <li><a href="../Financeiro/TipoArquivosHelperTest.html">Financeiro::TipoArquivosHelperTest</a>
+  
+    <li><a href="../Financeiro/TipoEventoFinanceiro.html">Financeiro::TipoEventoFinanceiro</a>
+  
+    <li><a href="../Financeiro/TipoEventoFinanceiroTest.html">Financeiro::TipoEventoFinanceiroTest</a>
+  
+    <li><a href="../Financeiro/TipoEventoFinanceirosController.html">Financeiro::TipoEventoFinanceirosController</a>
+  
+    <li><a href="../Financeiro/TipoEventoFinanceirosControllerTest.html">Financeiro::TipoEventoFinanceirosControllerTest</a>
+  
+    <li><a href="../Financeiro/TipoEventoFinanceirosHelper.html">Financeiro::TipoEventoFinanceirosHelper</a>
+  
+    <li><a href="../Financeiro/TipoEventoFinanceirosHelperTest.html">Financeiro::TipoEventoFinanceirosHelperTest</a>
+  
+    <li><a href="../FinanceiroTest.html">FinanceiroTest</a>
+  
+    <li><a href="../Logger.html">Logger</a>
+  
+    <li><a href="../NavigationTest.html">NavigationTest</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../TipoArquivo.html">TipoArquivo</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Financeiro::EventoFinanceirosController</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>POST /evento_financeiros</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File app/controllers/financeiro/evento_financeiros_controller.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+  <span class="ruby-ivar">@evento_financeiro</span> = <span class="ruby-constant">EventoFinanceiro</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">evento_financeiro_params</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@evento_financeiro</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@evento_financeiro</span>, <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;Evento financeiro was successfully created.&#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;new&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create-method -->
+
+    
+      <div id="method-i-destroy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>DELETE /evento_financeiros/1</p>
+          
+          
+
+          
+          <div class="method-source-code" id="destroy-source">
+            <pre><span class="ruby-comment"># File app/controllers/financeiro/evento_financeiros_controller.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
+  <span class="ruby-ivar">@evento_financeiro</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">evento_financeiros_url</span>, <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;Evento financeiro was successfully destroyed.&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- destroy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- destroy-method -->
+
+    
+      <div id="method-i-edit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>GET /evento_financeiros/1/edit</p>
+          
+          
+
+          
+          <div class="method-source-code" id="edit-source">
+            <pre><span class="ruby-comment"># File app/controllers/financeiro/evento_financeiros_controller.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- edit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- edit-method -->
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>GET /evento_financeiros</p>
+          
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/financeiro/evento_financeiros_controller.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+  <span class="ruby-ivar">@evento_financeiros</span> = <span class="ruby-constant">EventoFinanceiro</span>.<span class="ruby-identifier">all</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-method -->
+
+    
+      <div id="method-i-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>GET /evento_financeiros/new</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/controllers/financeiro/evento_financeiros_controller.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@evento_financeiro</span> = <span class="ruby-constant">EventoFinanceiro</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-i-show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>GET /evento_financeiros/1</p>
+          
+          
+
+          
+          <div class="method-source-code" id="show-source">
+            <pre><span class="ruby-comment"># File app/controllers/financeiro/evento_financeiros_controller.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- show-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- show-method -->
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>PATCH/PUT /evento_financeiros/1</p>
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File app/controllers/financeiro/evento_financeiros_controller.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@evento_financeiro</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">evento_financeiro_params</span>)
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@evento_financeiro</span>, <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;Evento financeiro was successfully updated.&#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;edit&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

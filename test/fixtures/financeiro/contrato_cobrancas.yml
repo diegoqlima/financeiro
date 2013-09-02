@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  conta_id: 
+  numero_contrato: MyString
+  ativo: 
+  carteira: MyString
+
+two:
+  conta_id: 
+  numero_contrato: MyString
+  ativo: 
+  carteira: MyString

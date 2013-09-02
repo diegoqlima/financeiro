@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Financeiro::Remessa - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/utils/financeiro/brasil.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-agencia_debito">#agencia_debito</a>
+    
+    <li ><a href="#method-i-body">#body</a>
+    
+    <li ><a href="#method-i-body_line">#body_line</a>
+    
+    <li ><a href="#method-i-codigo_movimento">#codigo_movimento</a>
+    
+    <li ><a href="#method-i-data_vencimento">#data_vencimento</a>
+    
+    <li ><a href="#method-i-form">#form</a>
+    
+    <li ><a href="#method-i-gerar">#gerar</a>
+    
+    <li ><a href="#method-i-header">#header</a>
+    
+    <li ><a href="#method-i-id_cliente_banco">#id_cliente_banco</a>
+    
+    <li ><a href="#method-i-id_cliente_empresa">#id_cliente_empresa</a>
+    
+    <li ><a href="#method-i-inject">#inject</a>
+    
+    <li ><a href="#method-i-lote">#lote</a>
+    
+    <li ><a href="#method-i-nome_arquivo">#nome_arquivo</a>
+    
+    <li ><a href="#method-i-pasta">#pasta</a>
+    
+    <li ><a href="#method-i-trailler">#trailler</a>
+    
+    <li ><a href="#method-i-uso_empresa">#uso_empresa</a>
+    
+    <li ><a href="#method-i-valor_debito">#valor_debito</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li class="file"><a href="../MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/application_js.html">application.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/arquivos_js.html">arquivos.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/bancos_js.html">bancos.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/conta_js.html">conta.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/contrato_cobrancas_js.html">contrato_cobrancas.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/evento_financeiros_js.html">evento_financeiros.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/meio_pagamentos_js.html">meio_pagamentos.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/pagamentos_js.html">pagamentos.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/periodo_cobrancas_js.html">periodo_cobrancas.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/tipo_arquivos_js.html">tipo_arquivos.js</a>
+  
+    <li class="file"><a href="../app/assets/javascripts/financeiro/tipo_evento_financeiros_js.html">tipo_evento_financeiros.js</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/application_css.html">application.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/arquivos_css.html">arquivos.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/bancos_css.html">bancos.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/conta_css.html">conta.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/contrato_cobrancas_css.html">contrato_cobrancas.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/evento_financeiros_css.html">evento_financeiros.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/meio_pagamentos_css.html">meio_pagamentos.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/pagamentos_css.html">pagamentos.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/periodo_cobrancas_css.html">periodo_cobrancas.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/tipo_arquivos_css.html">tipo_arquivos.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/financeiro/tipo_evento_financeiros_css.html">tipo_evento_financeiros.css</a>
+  
+    <li class="file"><a href="../app/assets/stylesheets/scaffold_css.html">scaffold.css</a>
+  
+    <li class="file"><a href="../doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="../financeiro_gemspec.html">financeiro.gemspec</a>
+  
+    <li class="file"><a href="../lib/tasks/financeiro_tasks_rake.html">financeiro_tasks.rake</a>
+  
+    <li class="file"><a href="../test/dummy/README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../test/dummy/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../test/dummy/app/assets/javascripts/active_admin_js_coffee.html">active_admin.js.coffee</a>
+  
+    <li class="file"><a href="../test/dummy/app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li class="file"><a href="../test/dummy/app/assets/stylesheets/active_admin_css_scss.html">active_admin.css.scss</a>
+  
+    <li class="file"><a href="../test/dummy/app/assets/stylesheets/application_css.html">application.css</a>
+  
+    <li class="file"><a href="../test/dummy/config_ru.html">config.ru</a>
+  
+    <li class="file"><a href="../test/dummy/db/production_sqlite3.html">production.sqlite3</a>
+  
+    <li class="file"><a href="../test/dummy/db/test_sqlite3.html">test.sqlite3</a>
+  
+    <li class="file"><a href="../test/dummy/log/development_log.html">development.log</a>
+  
+    <li class="file"><a href="../test/dummy/public/404_html.html">404.html</a>
+  
+    <li class="file"><a href="../test/dummy/public/422_html.html">422.html</a>
+  
+    <li class="file"><a href="../test/dummy/public/500_html.html">500.html</a>
+  
+    <li class="file"><a href="../test/dummy/public/favicon_ico.html">favicon.ico</a>
+  
+    <li class="file"><a href="../test/dummy/tmp/pids/server_pid.html">server.pid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../ActiveRecord.html">ActiveRecord</a>
+  
+    <li><a href="../ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="../AddAssociationToEventoFinanceiros.html">AddAssociationToEventoFinanceiros</a>
+  
+    <li><a href="../AddMeioPagamentoToFinanceiroEventoFinanceiros.html">AddMeioPagamentoToFinanceiroEventoFinanceiros</a>
+  
+    <li><a href="../AddPeriodoCobrancaToEventoFinanceiros.html">AddPeriodoCobrancaToEventoFinanceiros</a>
+  
+    <li><a href="../ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="../ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="../CreateFinanceiroArquivos.html">CreateFinanceiroArquivos</a>
+  
+    <li><a href="../CreateFinanceiroBancos.html">CreateFinanceiroBancos</a>
+  
+    <li><a href="../CreateFinanceiroConta.html">CreateFinanceiroConta</a>
+  
+    <li><a href="../CreateFinanceiroContratoCobrancas.html">CreateFinanceiroContratoCobrancas</a>
+  
+    <li><a href="../CreateFinanceiroEventoFinanceiros.html">CreateFinanceiroEventoFinanceiros</a>
+  
+    <li><a href="../CreateFinanceiroMeioPagamentos.html">CreateFinanceiroMeioPagamentos</a>
+  
+    <li><a href="../CreateFinanceiroPagamentos.html">CreateFinanceiroPagamentos</a>
+  
+    <li><a href="../CreateFinanceiroPeriodoCobrancas.html">CreateFinanceiroPeriodoCobrancas</a>
+  
+    <li><a href="../CreateFinanceiroTipoArquivos.html">CreateFinanceiroTipoArquivos</a>
+  
+    <li><a href="../CreateFinanceiroTipoEventoFinanceiros.html">CreateFinanceiroTipoEventoFinanceiros</a>
+  
+    <li><a href="../Dummy.html">Dummy</a>
+  
+    <li><a href="../Dummy/Application.html">Dummy::Application</a>
+  
+    <li><a href="../Financeiro.html">Financeiro</a>
+  
+    <li><a href="../Financeiro/AdminUser.html">Financeiro::AdminUser</a>
+  
+    <li><a href="../Financeiro/AdminUserTest.html">Financeiro::AdminUserTest</a>
+  
+    <li><a href="../Financeiro/ApplicationController.html">Financeiro::ApplicationController</a>
+  
+    <li><a href="../Financeiro/ApplicationHelper.html">Financeiro::ApplicationHelper</a>
+  
+    <li><a href="../Financeiro/Arquivo.html">Financeiro::Arquivo</a>
+  
+    <li><a href="../Financeiro/ArquivoTest.html">Financeiro::ArquivoTest</a>
+  
+    <li><a href="../Financeiro/ArquivosController.html">Financeiro::ArquivosController</a>
+  
+    <li><a href="../Financeiro/ArquivosControllerTest.html">Financeiro::ArquivosControllerTest</a>
+  
+    <li><a href="../Financeiro/ArquivosHelper.html">Financeiro::ArquivosHelper</a>
+  
+    <li><a href="../Financeiro/ArquivosHelperTest.html">Financeiro::ArquivosHelperTest</a>
+  
+    <li><a href="../Financeiro/Banco.html">Financeiro::Banco</a>
+  
+    <li><a href="../Financeiro/BancoBrasil.html">Financeiro::BancoBrasil</a>
+  
+    <li><a href="../Financeiro/BancoBrasil/Critica.html">Financeiro::BancoBrasil::Critica</a>
+  
+    <li><a href="../Financeiro/BancoMercantil.html">Financeiro::BancoMercantil</a>
+  
+    <li><a href="../Financeiro/BancoMercantil/Remessa.html">Financeiro::BancoMercantil::Remessa</a>
+  
+    <li><a href="../Financeiro/BancoMercantil/Retorno.html">Financeiro::BancoMercantil::Retorno</a>
+  
+    <li><a href="../Financeiro/BancoTest.html">Financeiro::BancoTest</a>
+  
+    <li><a href="../Financeiro/BancosController.html">Financeiro::BancosController</a>
+  
+    <li><a href="../Financeiro/BancosControllerTest.html">Financeiro::BancosControllerTest</a>
+  
+    <li><a href="../Financeiro/BancosHelper.html">Financeiro::BancosHelper</a>
+  
+    <li><a href="../Financeiro/BancosHelperTest.html">Financeiro::BancosHelperTest</a>
+  
+    <li><a href="../Financeiro/Bradesco.html">Financeiro::Bradesco</a>
+  
+    <li><a href="../Financeiro/Bradesco/Critica.html">Financeiro::Bradesco::Critica</a>
+  
+    <li><a href="../Financeiro/Bradesco/Remessa.html">Financeiro::Bradesco::Remessa</a>
+  
+    <li><a href="../Financeiro/Conta.html">Financeiro::Conta</a>
+  
+    <li><a href="../Financeiro/ContaController.html">Financeiro::ContaController</a>
+  
+    <li><a href="../Financeiro/ContaControllerTest.html">Financeiro::ContaControllerTest</a>
+  
+    <li><a href="../Financeiro/ContaHelper.html">Financeiro::ContaHelper</a>
+  
+    <li><a href="../Financeiro/ContaHelperTest.html">Financeiro::ContaHelperTest</a>
+  
+    <li><a href="../Financeiro/ContaTest.html">Financeiro::ContaTest</a>
+  
+    <li><a href="../Financeiro/ContratoCobranca.html">Financeiro::ContratoCobranca</a>
+  
+    <li><a href="../Financeiro/ContratoCobrancaTest.html">Financeiro::ContratoCobrancaTest</a>
+  
+    <li><a href="../Financeiro/ContratoCobrancasController.html">Financeiro::ContratoCobrancasController</a>
+  
+    <li><a href="../Financeiro/ContratoCobrancasControllerTest.html">Financeiro::ContratoCobrancasControllerTest</a>
+  
+    <li><a href="../Financeiro/ContratoCobrancasHelper.html">Financeiro::ContratoCobrancasHelper</a>
+  
+    <li><a href="../Financeiro/ContratoCobrancasHelperTest.html">Financeiro::ContratoCobrancasHelperTest</a>
+  
+    <li><a href="../Financeiro/Engine.html">Financeiro::Engine</a>
+  
+    <li><a href="../Financeiro/EventoFinanceiro.html">Financeiro::EventoFinanceiro</a>
+  
+    <li><a href="../Financeiro/EventoFinanceiroTest.html">Financeiro::EventoFinanceiroTest</a>
+  
+    <li><a href="../Financeiro/EventoFinanceirosController.html">Financeiro::EventoFinanceirosController</a>
+  
+    <li><a href="../Financeiro/EventoFinanceirosControllerTest.html">Financeiro::EventoFinanceirosControllerTest</a>
+  
+    <li><a href="../Financeiro/EventoFinanceirosHelper.html">Financeiro::EventoFinanceirosHelper</a>
+  
+    <li><a href="../Financeiro/EventoFinanceirosHelperTest.html">Financeiro::EventoFinanceirosHelperTest</a>
+  
+    <li><a href="../Financeiro/FinanceiroService.html">Financeiro::FinanceiroService</a>
+  
+    <li><a href="../Financeiro/MeioPagamento.html">Financeiro::MeioPagamento</a>
+  
+    <li><a href="../Financeiro/MeioPagamentoTest.html">Financeiro::MeioPagamentoTest</a>
+  
+    <li><a href="../Financeiro/MeioPagamentosController.html">Financeiro::MeioPagamentosController</a>
+  
+    <li><a href="../Financeiro/MeioPagamentosControllerTest.html">Financeiro::MeioPagamentosControllerTest</a>
+  
+    <li><a href="../Financeiro/MeioPagamentosHelper.html">Financeiro::MeioPagamentosHelper</a>
+  
+    <li><a href="../Financeiro/MeioPagamentosHelperTest.html">Financeiro::MeioPagamentosHelperTest</a>
+  
+    <li><a href="../Financeiro/Pagamento.html">Financeiro::Pagamento</a>
+  
+    <li><a href="../Financeiro/PagamentoTest.html">Financeiro::PagamentoTest</a>
+  
+    <li><a href="../Financeiro/PagamentosController.html">Financeiro::PagamentosController</a>
+  
+    <li><a href="../Financeiro/PagamentosControllerTest.html">Financeiro::PagamentosControllerTest</a>
+  
+    <li><a href="../Financeiro/PagamentosHelper.html">Financeiro::PagamentosHelper</a>
+  
+    <li><a href="../Financeiro/PagamentosHelperTest.html">Financeiro::PagamentosHelperTest</a>
+  
+    <li><a href="../Financeiro/PeriodoCobranca.html">Financeiro::PeriodoCobranca</a>
+  
+    <li><a href="../Financeiro/PeriodoCobrancaTest.html">Financeiro::PeriodoCobrancaTest</a>
+  
+    <li><a href="../Financeiro/PeriodoCobrancasController.html">Financeiro::PeriodoCobrancasController</a>
+  
+    <li><a href="../Financeiro/PeriodoCobrancasControllerTest.html">Financeiro::PeriodoCobrancasControllerTest</a>
+  
+    <li><a href="../Financeiro/PeriodoCobrancasHelper.html">Financeiro::PeriodoCobrancasHelper</a>
+  
+    <li><a href="../Financeiro/PeriodoCobrancasHelperTest.html">Financeiro::PeriodoCobrancasHelperTest</a>
+  
+    <li><a href="../Financeiro/Remessa.html">Financeiro::Remessa</a>
+  
+    <li><a href="../Financeiro/TipoArquivo.html">Financeiro::TipoArquivo</a>
+  
+    <li><a href="../Financeiro/TipoArquivoTest.html">Financeiro::TipoArquivoTest</a>
+  
+    <li><a href="../Financeiro/TipoArquivosController.html">Financeiro::TipoArquivosController</a>
+  
+    <li><a href="../Financeiro/TipoArquivosControllerTest.html">Financeiro::TipoArquivosControllerTest</a>
+  
+    <li><a href="../Financeiro/TipoArquivosHelper.html">Financeiro::TipoArquivosHelper</a>
+  
+    <li><a href="../Financeiro/TipoArquivosHelperTest.html">Financeiro::TipoArquivosHelperTest</a>
+  
+    <li><a href="../Financeiro/TipoEventoFinanceiro.html">Financeiro::TipoEventoFinanceiro</a>
+  
+    <li><a href="../Financeiro/TipoEventoFinanceiroTest.html">Financeiro::TipoEventoFinanceiroTest</a>
+  
+    <li><a href="../Financeiro/TipoEventoFinanceirosController.html">Financeiro::TipoEventoFinanceirosController</a>
+  
+    <li><a href="../Financeiro/TipoEventoFinanceirosControllerTest.html">Financeiro::TipoEventoFinanceirosControllerTest</a>
+  
+    <li><a href="../Financeiro/TipoEventoFinanceirosHelper.html">Financeiro::TipoEventoFinanceirosHelper</a>
+  
+    <li><a href="../Financeiro/TipoEventoFinanceirosHelperTest.html">Financeiro::TipoEventoFinanceirosHelperTest</a>
+  
+    <li><a href="../FinanceiroTest.html">FinanceiroTest</a>
+  
+    <li><a href="../Logger.html">Logger</a>
+  
+    <li><a href="../NavigationTest.html">NavigationTest</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../TipoArquivo.html">TipoArquivo</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Financeiro::Remessa</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="BRANCO">BRANCO
+        
+        <dd class="description">
+        
+      
+        <dt id="CONVENIO">CONVENIO
+        
+        <dd class="description">
+        
+      
+        <dt id="NOME_EMPRESA">NOME_EMPRESA
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-agencia_debito" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">agencia_debito</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="agencia_debito-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 202</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">agencia_debito</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">agencia</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- agencia_debito-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- agencia_debito-method -->
+
+    
+      <div id="method-i-body" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">body</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="body-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">body</span>
+  <span class="ruby-ivar">@registros</span> = <span class="ruby-value">2</span>
+  <span class="ruby-identifier">brasil</span> = <span class="ruby-constant">MeioPagamento</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;nome = &#39;debito_brasil&#39;&quot;</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">id</span>
+  <span class="ruby-constant">Pagamento</span>.<span class="ruby-identifier">includes</span>(<span class="ruby-value">:contribuicao</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">:unidade</span>,<span class="ruby-value">:pessoa</span>,<span class="ruby-value">:meio_pagamento</span>,<span class="ruby-value">:tipo_contribuicao</span>]).
+            <span class="ruby-identifier">where</span>(<span class="ruby-node">&quot;contribuicoes.meio_pagamento_id = #{brasil} and data_referencia &gt;= ? and data_referencia &lt;= ? and pagamentos.state is null&quot;</span>,
+                  <span class="ruby-ivar">@data_referencia</span>.<span class="ruby-identifier">beginning_of_month</span>, <span class="ruby-ivar">@data_referencia</span>.<span class="ruby-identifier">end_of_month</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pagamento</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">inject</span>(<span class="ruby-identifier">pagamento</span>)
+    <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">body_line</span>(<span class="ruby-identifier">pagamento</span>))
+    <span class="ruby-ivar">@registros</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-ivar">@valor_total</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">pagamento</span>.<span class="ruby-identifier">valor</span> <span class="ruby-operator">*</span> <span class="ruby-value">100</span>).<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- body-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- body-method -->
+
+    
+      <div id="method-i-body_line" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">body_line</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="body_line-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">body_line</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-identifier">str</span>  = <span class="ruby-node">&quot;E#{obj.id_cliente_empresa.as_campo(13,0)}#{BRANCO.as_campo(12)}#{obj.agencia_debito.to_i.as_campo(4,0)}&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{obj.id_cliente_banco.to_i.as_campo(14,0)}#{obj.data_vencimento.strftime(&#39;%Y%m%d&#39;)}&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{obj.valor_debito.as_campo(13,2)}03#{obj.uso_empresa.as_campo(60,0)}#{&#39;&#39;.as_campo(20)}#{obj.codigo_movimento}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- body_line-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- body_line-method -->
+
+    
+      <div id="method-i-codigo_movimento" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">codigo_movimento</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="codigo_movimento-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 206</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">codigo_movimento</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">cancelado</span> <span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- codigo_movimento-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- codigo_movimento-method -->
+
+    
+      <div id="method-i-data_vencimento" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">data_vencimento</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="data_vencimento-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 182</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">data_vencimento</span>
+  <span class="ruby-keyword">if</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">dia_debito</span>)
+    <span class="ruby-constant">Date</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>, <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">month</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">dia_debito</span>.<span class="ruby-identifier">to_i</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_vencimento</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- data_vencimento-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- data_vencimento-method -->
+
+    
+      <div id="method-i-form" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">form</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="form-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">form</span>
+  [
+    [<span class="ruby-value">:mes_referencia</span>, <span class="ruby-string">&quot;Mes Referencia&quot;</span>, <span class="ruby-value">:month_and_year</span>],
+    [<span class="ruby-value">:remessa</span>, <span class="ruby-string">&quot;Número da Remessa&quot;</span>, <span class="ruby-value">:text</span>]
+  ]
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- form-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- form-method -->
+
+    
+      <div id="method-i-gerar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gerar</span><span
+            class="method-args">(params)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gerar-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gerar</span>(<span class="ruby-identifier">params</span>)
+  <span class="ruby-ivar">@data_referencia</span> = <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;mes_referencia(1i)&quot;</span>].<span class="ruby-identifier">to_i</span>, 
+                                  <span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;mes_referencia(2i)&quot;</span>].<span class="ruby-identifier">to_i</span>,<span class="ruby-value">1</span>);
+  <span class="ruby-ivar">@remessa</span> = <span class="ruby-identifier">params</span>[<span class="ruby-string">&#39;remessa&#39;</span>].<span class="ruby-identifier">to_i</span>                                 
+  <span class="ruby-ivar">@registros</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@valor_total</span> = <span class="ruby-value">0</span>
+
+  <span class="ruby-ivar">@buffer</span>  = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">Rails</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;/public/system/arquivos/#{pasta}/#{nome_arquivo(@remessa)}&quot;</span>, <span class="ruby-string">&quot;w&quot;</span>)
+
+  <span class="ruby-identifier">header</span>
+  <span class="ruby-identifier">body</span>
+  <span class="ruby-identifier">trailler</span>
+  <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- gerar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- gerar-method -->
+
+    
+      <div id="method-i-header" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">header</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="header-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">header</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-node">&quot;A1#{CONVENIO.as_campo(20)}#{NOME_EMPRESA.as_campo(20)}&quot;</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;001BANCO DO BRASIL     #{DateTime.now.strftime(&#39;%Y%m%d&#39;)}#{@remessa.as_campo(6,0)}04&quot;</span>
+  <span class="ruby-comment"># str += &quot;DBT10000&quot;.as_campo(17) + &quot;&quot;.as_campo(52)</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;DEBITO AUTOMATICO&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">17</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">as_campo</span>(<span class="ruby-value">52</span>)
+  <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- header-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- header-method -->
+
+    
+      <div id="method-i-id_cliente_banco" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">id_cliente_banco</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="id_cliente_banco-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">id_cliente_banco</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">conta</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- id_cliente_banco-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- id_cliente_banco-method -->
+
+    
+      <div id="method-i-id_cliente_empresa" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">id_cliente_empresa</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="id_cliente_empresa-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">id_cliente_empresa</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">id</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- id_cliente_empresa-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- id_cliente_empresa-method -->
+
+    
+      <div id="method-i-inject" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inject</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adiciona o metodo to_arquivo ao objeto corrente</p>
+          
+          
+
+          
+          <div class="method-source-code" id="inject-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inject</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword">do</span> 
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">valor_debito</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">valor</span>
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">data_vencimento</span>
+      <span class="ruby-keyword">if</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">dia_debito</span>)
+        <span class="ruby-constant">Date</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>, <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">month</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">dia_debito</span>.<span class="ruby-identifier">to_i</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data_vencimento</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">id_cliente_empresa</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">pessoa</span>.<span class="ruby-identifier">id</span>
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">id_cliente_banco</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">conta</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">uso_empresa</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">agencia_debito</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">agencia</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">codigo_movimento</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">contribuicao</span>.<span class="ruby-identifier">cancelado</span> <span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inject-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inject-method -->
+
+    
+      <div id="method-i-lote" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lote</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="lote-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lote</span>
+  <span class="ruby-string">&quot;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lote-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lote-method -->
+
+    
+      <div id="method-i-nome_arquivo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nome_arquivo</span><span
+            class="method-args">(remessa)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="nome_arquivo-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nome_arquivo</span>(<span class="ruby-identifier">remessa</span>)
+  <span class="ruby-node">&quot;DBT_#{DateTime.now.strftime(&#39;%Y%m%d&#39;)}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nome_arquivo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nome_arquivo-method -->
+
+    
+      <div id="method-i-pasta" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pasta</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pasta-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pasta</span>
+  <span class="ruby-string">&quot;bancobrasil/remessa&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pasta-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pasta-method -->
+
+    
+      <div id="method-i-trailler" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">trailler</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="trailler-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trailler</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-node">&quot;Z#{@registros.as_campo(6,0)}#{@valor_total.as_campo(17,0)}#{&#39;&#39;.as_campo(126)}&quot;</span>
+  <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- trailler-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- trailler-method -->
+
+    
+      <div id="method-i-uso_empresa" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">uso_empresa</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="uso_empresa-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">uso_empresa</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- uso_empresa-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- uso_empresa-method -->
+
+    
+      <div id="method-i-valor_debito" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">valor_debito</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="valor_debito-source">
+            <pre><span class="ruby-comment"># File app/utils/financeiro/brasil.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">valor_debito</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">valor</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- valor_debito-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- valor_debito-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

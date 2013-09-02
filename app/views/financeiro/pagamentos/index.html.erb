@@ -1,0 +1,37 @@
+<h1>Listing pagamentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Valor</th>
+      <th>State</th>
+      <th>Data vencimento</th>
+      <th>Data pagamento</th>
+      <th>Evento financeiro</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pagamentos.each do |pagamento| %>
+      <tr>
+        <td><%= pagamento.id %></td>
+        <td><%= pagamento.valor %></td>
+        <td><%= pagamento.state %></td>
+        <td><%= pagamento.data_vencimento %></td>
+        <td><%= pagamento.data_pagamento %></td>
+        <td><%= pagamento.evento_financeiro %></td>
+        <td><%= link_to 'Show', pagamento %></td>
+        <td><%= link_to 'Edit', edit_pagamento_path(pagamento) %></td>
+        <td><%= link_to 'Destroy', pagamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pagamento', new_pagamento_path %>

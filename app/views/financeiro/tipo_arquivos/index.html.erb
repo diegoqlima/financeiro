@@ -1,0 +1,33 @@
+<h1>Listing tipo_arquivos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descricao</th>
+      <th>Meio pagamento</th>
+      <th>Entrada</th>
+      <th>Spec</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipo_arquivos.each do |tipo_arquivo| %>
+      <tr>
+        <td><%= tipo_arquivo.descricao %></td>
+        <td><%= tipo_arquivo.meio_pagamento %></td>
+        <td><%= tipo_arquivo.entrada %></td>
+        <td><%= tipo_arquivo.spec %></td>
+        <td><%= link_to 'Show', tipo_arquivo %></td>
+        <td><%= link_to 'Edit', edit_tipo_arquivo_path(tipo_arquivo) %></td>
+        <td><%= link_to 'Destroy', tipo_arquivo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tipo arquivo', new_tipo_arquivo_path %>

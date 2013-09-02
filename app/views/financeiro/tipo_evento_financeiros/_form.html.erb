@@ -1,0 +1,25 @@
+<%= form_for(@tipo_evento_financeiro) do |f| %>
+  <% if @tipo_evento_financeiro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tipo_evento_financeiro.errors.count, "error") %> prohibited this tipo_evento_financeiro from being saved:</h2>
+
+      <ul>
+      <% @tipo_evento_financeiro.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br>
+    <%= f.number_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_field :descricao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

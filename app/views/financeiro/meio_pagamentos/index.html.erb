@@ -1,0 +1,29 @@
+<h1>Listing meio_pagamentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Descricao</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @meio_pagamentos.each do |meio_pagamento| %>
+      <tr>
+        <td><%= meio_pagamento.nome %></td>
+        <td><%= meio_pagamento.descricao %></td>
+        <td><%= link_to 'Show', meio_pagamento %></td>
+        <td><%= link_to 'Edit', edit_meio_pagamento_path(meio_pagamento) %></td>
+        <td><%= link_to 'Destroy', meio_pagamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Meio pagamento', new_meio_pagamento_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @evento_financeiro.id %>
+</p>
+
+<p>
+  <strong>Inicio:</strong>
+  <%= @evento_financeiro.inicio %>
+</p>
+
+<p>
+  <strong>Fim:</strong>
+  <%= @evento_financeiro.fim %>
+</p>
+
+<p>
+  <strong>Tipo evento financeiro:</strong>
+  <%= @evento_financeiro.tipo_evento_financeiro %>
+</p>
+<p>
+  <strong>Periodo Cobranca:</strong>
+  <%= @evento_financeiro.periodo_cobranca %>
+</p>
+
+
+<%= link_to 'Edit', edit_evento_financeiro_path(@evento_financeiro) %> |
+<%= link_to 'Back', evento_financeiros_path %>

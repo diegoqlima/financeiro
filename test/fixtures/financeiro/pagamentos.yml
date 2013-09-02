@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  valor: 1.5
+  state: MyString
+  data_vencimento: 2013-08-02
+  data_pagamento: 2013-08-02
+  evento_financeiro_id: 
+
+two:
+  id: 1
+  valor: 1.5
+  state: MyString
+  data_vencimento: 2013-08-02
+  data_pagamento: 2013-08-02
+  evento_financeiro_id: 
