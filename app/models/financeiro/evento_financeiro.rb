@@ -17,17 +17,17 @@ module Financeiro
       p "VAI CRIAR PAGAMENTOS"
       puts "********************************"
       # verifica se já existe pagamento para a data de referencia
-      p = Financeiro::Pagamento.where(evento_financeiro: self, data_referencia: self.inicio)
+      p = Financeiro::Pagamento.where(evento_financeiro: self, data_vencimento: self.inicio)
       #Somente cria pagamentos na hora se o pagamento for para o mesmo dia
       if(inicio == Date.today and p.empty?)
-        self.pagamentos.create(valor: self.valor, data_referencia: inicio)
+        self.pagamentos.create(valor: self.valor, data_vencimento: inicio)
       end
 
       #Somente cria pagamentos na hora se o pagamento for boleto
       boleto = Financeiro::MeioPagamento.BOLETO.id
       if(self.meio_pagamento_id == boleto && p.empty?)
         inicio = DateTime.new(self.inicio.year, self.inicio.month, self.vencimento_boleto.day)
-        self.pagamentos.create(:valor => self.valor, :data_referencia => inicio)
+        self.pagamentos.create(:valor => self.valor, :data_vencimento => inicio)
       end
 
       #Quando esta atualizando, atualiza o valor de todos os pagamentos virgens
