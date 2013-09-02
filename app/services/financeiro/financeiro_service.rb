@@ -13,6 +13,7 @@ module Financeiro
     # - association_class: Nome da classe de associacao. Ex:(Curso, Produto, etc...)
     def self.criar_evento_financeiro(inicio, fim, tipo_evento_financeiro, meio_pagamento, periodo_cobranca, association_id, association_class)
       ef = Financeiro::EventoFinanceiro.new(inicio: inicio, fim: fim, tipo_evento_financeiro: tipo_evento_financeiro, meio_pagamento: meio_pagamento, periodo_cobranca: periodo_cobranca, association_id: association_id, association_class: association_class)
+      ef.save!
     end
 
     # Procura um evento financeiro a partir do id e do nome da classe da associacao
