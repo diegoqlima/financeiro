@@ -23,7 +23,7 @@ module Financeiro
     # - association_id: ID do objeto a ser associado
     # - association_class: Nome da classe de associacao. Ex:(Curso, Produto, etc...)    
     def self.find_evento_financeiro(association_id, association_class)
-      Financeiro::EventoFinanceiro.find(association_id: association_id, association_class: association_class)
+      Financeiro::EventoFinanceiro.find_by(association_id: association_id, association_class: association_class)
     end
     
   end
