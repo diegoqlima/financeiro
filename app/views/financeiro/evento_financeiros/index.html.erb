@@ -16,7 +16,8 @@
     <% @evento_financeiros.each do |evento_financeiro| %>
       <tr>
         <td><%= evento_financeiro.id %></td>
-        <td><%= evento_financeiro.data %></td>
+        <td><%= evento_financeiro.inicio %></td>
+        <td><%= evento_financeiro.fim %></td>
         <td><%= evento_financeiro.tipo_evento_financeiro %></td>
         <td><%= link_to 'Show', evento_financeiro %></td>
         <td><%= link_to 'Edit', edit_evento_financeiro_path(evento_financeiro) %></td>
