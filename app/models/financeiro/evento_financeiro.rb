@@ -13,9 +13,6 @@ module Financeiro
     after_save :cria_pagamentos
     
     def cria_pagamentos
-      puts "********************************"
-      p "VAI CRIAR PAGAMENTOS"
-      puts "********************************"
       # verifica se já existe pagamento para a data de referencia
       p = Financeiro::Pagamento.where(evento_financeiro: self, data_vencimento: self.inicio)
       #Somente cria pagamentos na hora se o pagamento for para o mesmo dia

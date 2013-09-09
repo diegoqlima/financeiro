@@ -34,6 +34,6 @@ module Financeiro
   end
   
   def to_s
-    descricao
+    self.descricao
   end
 end
