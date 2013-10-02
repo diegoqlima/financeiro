@@ -13,7 +13,7 @@
 # These inflection rules are supported but not enabled by default:
 ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular 'conta', 'contas'
-  inflect.irregular 'configuracao', 'configuracoes'
+  inflect.irregular 'financeiro_configuracao', 'financeiro_configuracoes'
   inflect.irregular 'periodo_cobranca', 'periodo_cobrancas'
 #   inflect.acronym 'RESTful'
 end

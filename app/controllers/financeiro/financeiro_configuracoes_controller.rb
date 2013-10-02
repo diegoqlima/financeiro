@@ -1,12 +1,12 @@
 require_dependency "financeiro/application_controller"
 
 module Financeiro
-  class ConfiguracoesController < ApplicationController
+  class FinanceiroConfiguracoesController < ApplicationController
     before_action :set_configuracao, only: [:show, :edit, :update, :destroy]
 
     # GET /configuracaos
     def index
-      @configuracaos = Configuracao.all
+      @configuracaos = FinanceiroConfiguracao.all
     end
 
     # GET /configuracaos/1
@@ -15,7 +15,7 @@ module Financeiro
 
     # GET /configuracaos/new
     def new
-      @configuracao = Configuracao.new
+      @configuracao = FinanceiroConfiguracao.new
     end
 
     # GET /configuracaos/1/edit
@@ -24,7 +24,7 @@ module Financeiro
 
     # POST /configuracaos
     def create
-      @configuracao = Configuracao.new(configuracao_params)
+      @configuracao = FinanceiroConfiguracao.new(configuracao_params)
 
       if @configuracao.save
         redirect_to @configuracao, notice: 'Configuracao was successfully created.'
@@ -51,7 +51,7 @@ module Financeiro
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_configuracao
-        @configuracao = Configuracao.find(params[:id])
+        @configuracao = FinanceiroConfiguracao.find(params[:id])
       end
 
       # Only allow a trusted parameter "white list" through.

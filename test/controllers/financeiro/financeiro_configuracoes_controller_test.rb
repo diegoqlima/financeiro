@@ -1,7 +1,7 @@
 require 'test_helper'
 
 module Financeiro
-  class ConfiguracoesControllerTest < ActionController::TestCase
+  class FinanceiroConfiguracoesControllerTest < ActionController::TestCase
     setup do
       @configuracao = configuracaos(:one)
     end

@@ -1,5 +1,5 @@
 Financeiro::Engine.routes.draw do
-  resources :configuracoes
+  resources :financeiro_configuracoes
 
   resources :arquivos
 

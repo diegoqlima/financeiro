@@ -1,5 +1,5 @@
 module Financeiro
-  class Configuracao < ActiveRecord::Base
+  class FinanceiroConfiguracao < ActiveRecord::Base
     
     validates_presence_of :email_pagseguro
     validates_presence_of :token_pagseguro

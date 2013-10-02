@@ -30,15 +30,6 @@ ActiveRecord::Schema.define(version: 20131002200117) do
     t.datetime "updated_at"
   end
 
-  create_table "financeiro_configuracoes", force: true do |t|
-    t.string   "email_pagseguro"
-    t.string   "token_pagseguro"
-    t.string   "notification_url"
-    t.string   "redirect_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "financeiro_conta", force: true do |t|
     t.integer  "banco_id"
     t.string   "agencia"
@@ -76,6 +67,15 @@ ActiveRecord::Schema.define(version: 20131002200117) do
     t.integer  "periodo_cobranca_id"
     t.integer  "association_id"
     t.string   "association_class"
+  end
+
+  create_table "financeiro_financeiro_configuracoes", force: true do |t|
+    t.string   "email_pagseguro"
+    t.string   "token_pagseguro"
+    t.string   "notification_url"
+    t.string   "redirect_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "financeiro_meio_pagamentos", force: true do |t|
