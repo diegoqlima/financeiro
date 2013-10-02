@@ -1,0 +1,29 @@
+<h1>Listing configuracaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email pagseguro</th>
+      <th>Token pagseguro</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @configuracaos.each do |configuracao| %>
+      <tr>
+        <td><%= configuracao.email_pagseguro %></td>
+        <td><%= configuracao.token_pagseguro %></td>
+        <td><%= link_to 'Show', configuracao %></td>
+        <td><%= link_to 'Edit', edit_configuracao_path(configuracao) %></td>
+        <td><%= link_to 'Destroy', configuracao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Configuracao', new_configuracao_path %>

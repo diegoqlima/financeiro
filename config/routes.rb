@@ -1,4 +1,6 @@
 Financeiro::Engine.routes.draw do
+  resources :configuracoes
+
   resources :arquivos
 
   resources :periodo_cobrancas

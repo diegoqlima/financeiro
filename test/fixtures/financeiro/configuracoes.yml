@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email_pagseguro: MyString
+  token_pagseguro: MyString
+
+two:
+  email_pagseguro: MyString
+  token_pagseguro: MyString

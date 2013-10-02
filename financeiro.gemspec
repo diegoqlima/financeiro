@@ -7,17 +7,18 @@ require "financeiro/version"
 Gem::Specification.new do |s|
   s.name        = "financeiro"
   s.version     = Financeiro::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Financeiro."
-  s.description = "TODO: Description of Financeiro."
-
+  s.authors     = ["Raro Labs"]
+  s.email       = ["contato@rarolabs.com.br"]
+  s.homepage    = "http://www.rarolabs.com.br"
+  s.summary     = "Integração dos meios de pagamento."
+  s.description = "Integração dos meios de pagamento."
+  
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.0.0"
   s.add_dependency "transitions"
+  s.add_dependency "pagseguro-oficial"
 
   s.add_development_dependency "sqlite3"
 end

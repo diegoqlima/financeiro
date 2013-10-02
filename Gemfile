@@ -12,3 +12,5 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+
+gem "pagseguro-oficial", git: "git://github.com/pagseguro/ruby.git"

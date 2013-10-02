@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130828185922) do
+ActiveRecord::Schema.define(version: 20131002200117) do
 
   create_table "financeiro_arquivos", force: true do |t|
     t.integer  "tipo_arquivo_id"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20130828185922) do
   create_table "financeiro_bancos", force: true do |t|
     t.string   "codigo"
     t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "financeiro_configuracoes", force: true do |t|
+    t.string   "email_pagseguro"
+    t.string   "token_pagseguro"
+    t.string   "notification_url"
+    t.string   "redirect_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -57,15 +66,14 @@ ActiveRecord::Schema.define(version: 20130828185922) do
   add_index "financeiro_contrato_cobrancas", ["conta_id"], name: "index_financeiro_contrato_cobrancas_on_conta_id"
 
   create_table "financeiro_evento_financeiros", force: true do |t|
-    t.date     "data"
+    t.date     "inicio"
+    t.date     "fim"
+    t.float    "valor"
     t.integer  "tipo_evento_financeiro_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "meio_pagamento_id"
     t.integer  "periodo_cobranca_id"
-    t.date     "inicio"
-    t.date     "fim"
-    t.float    "valor"
     t.integer  "association_id"
     t.string   "association_class"
   end
@@ -80,6 +88,8 @@ ActiveRecord::Schema.define(version: 20130828185922) do
   create_table "financeiro_pagamentos", force: true do |t|
     t.float    "valor"
     t.string   "state"
+    t.string   "codigo_critica"
+    t.string   "sub_codigo_critica"
     t.date     "data_vencimento"
     t.date     "data_pagamento"
     t.integer  "evento_financeiro_id"
