@@ -17,8 +17,8 @@
         <td><%= configuracao.email_pagseguro %></td>
         <td><%= configuracao.token_pagseguro %></td>
         <td><%= link_to 'Show', configuracao %></td>
-        <td><%= link_to 'Edit', edit_configuracao_path(configuracao) %></td>
-        <td><%= link_to 'Destroy', configuracao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_financeiro_configuracao_path(configuracao) %></td>
+        <td><%= link_to 'Destroy', financeiro_configuracoes_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

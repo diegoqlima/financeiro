@@ -56,7 +56,7 @@ module Financeiro
 
       # Only allow a trusted parameter "white list" through.
       def configuracao_params
-        params.require(:configuracao).permit(:email_pagseguro, :token_pagseguro, :notification_url, :redirect_url)
+        params.require(:financeiro_configuracao).permit(:email_pagseguro, :token_pagseguro, :notification_url, :redirect_url)
       end
   end
 end
