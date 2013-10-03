@@ -21,5 +21,9 @@ Financeiro::Engine.routes.draw do
 
   resources :tipo_evento_financeiros
   
-  resources :checkout
+  resources :checkout do 
+    member do 
+      get "pagar"
+    end
+  end
 end

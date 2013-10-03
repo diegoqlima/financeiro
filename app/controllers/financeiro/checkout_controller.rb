@@ -4,7 +4,7 @@ module Financeiro
   
   class CheckoutController < ApplicationController
     
-    def create
+    def pagar
       evento_financeiro = Financeiro::EventoFinanceiro.find(params[:id])
       
       config = Financeiro::FinanceiroConfiguracao.first
