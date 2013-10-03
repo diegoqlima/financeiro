@@ -20,4 +20,6 @@ Financeiro::Engine.routes.draw do
   resources :evento_financeiros
 
   resources :tipo_evento_financeiros
+  
+  resources :checkout
 end

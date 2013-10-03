@@ -44,5 +44,9 @@ module Financeiro
       self.association_class.constantize.find_by(id: self.association_id).pagamento_efetuado
     end
     
+    def association
+      self.association_class.constantize.find_by(id: self.association_id)
+    end
+    
   end
 end

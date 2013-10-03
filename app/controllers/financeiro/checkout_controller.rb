@@ -1,21 +1,29 @@
 require_dependency "financeiro/application_controller"
 
 module Financeiro
+  
   class CheckoutController < ApplicationController
     
     def create
-      inscricao = Formulario.find(params[:id])
-
+      evento_financeiro = Financeiro::EventoFinanceiro.find(params[:id])
+      
+      config = Financeiro::FinanceiroConfiguracao.first
+      
       payment = PagSeguro::PaymentRequest.new
-      payment.reference = inscricao.id
-      # payment.notification_url = notifications_url
-      # payment.redirect_url = processing_url
+      payment.reference = evento_financeiro.id
+      payment.notification_url = config.notification_url if config.present?
+      payment.redirect_url = config.redirect_url if config.present?
 
-      payment.items << {
-        id: item.produto.id,
-        description: item.produto.nome,
-        amount: item.produto.valor.to_f,
-      }
+      if evento_financeiro.association.itens.present?
+        evento_financeiro.association.itens.each do |item|
+          payment.items << {
+            id: item.produto.id,
+            description: item.produto.nome,
+            amount: item.produto.valor.to_f,
+            weight: item.produto.peso.to_f
+          }
+        end
+      end
 
       response = payment.register
 
@@ -30,7 +38,7 @@ module Financeiro
         redirect_to response.url
       end
     end
-  
     
   end
+  
 end
