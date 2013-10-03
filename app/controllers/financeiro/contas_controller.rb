@@ -1,7 +1,7 @@
 require_dependency "financeiro/application_controller"
 
 module Financeiro
-  class ContaController < ApplicationController
+  class ContasController < ApplicationController
     before_action :set_conta, only: [:show, :edit, :update, :destroy]
 
     # GET /conta

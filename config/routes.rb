@@ -7,7 +7,7 @@ Financeiro::Engine.routes.draw do
 
   resources :contrato_cobrancas
 
-  resources :conta
+  resources :contas
 
   resources :bancos
 

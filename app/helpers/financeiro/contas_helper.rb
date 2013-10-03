@@ -1,4 +1,4 @@
 module Financeiro
-  module ContaHelper
+  module ContasHelper
   end
 end
