@@ -5,7 +5,7 @@ module Financeiro
   class CheckoutController < ApplicationController
     
     def pagar
-      evento_financeiro = Financeiro::EventoFinanceiro.find(params[:id])
+      evento_financeiro = Financeiro::FinanceiroService.find_evento_financeiro(params[:id], params[:classe])
       
       config = Financeiro::FinanceiroConfiguracao.first
       
@@ -14,13 +14,13 @@ module Financeiro
       payment.notification_url = config.notification_url if config.present?
       payment.redirect_url = config.redirect_url if config.present?
 
-      if evento_financeiro.association.itens.present?
-        evento_financeiro.association.itens.each do |item|
+      if evento_financeiro.get_association.itens.present?
+        evento_financeiro.get_association.item_pedidos.each do |item|
           payment.items << {
             id: item.produto.id,
             description: item.produto.nome,
             amount: item.produto.valor.to_f,
-            weight: item.produto.peso.to_f
+            weight: item.produto.peso.to_i
           }
         end
       end

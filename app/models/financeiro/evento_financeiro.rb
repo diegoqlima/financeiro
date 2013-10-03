@@ -1,9 +1,9 @@
 module Financeiro
   class EventoFinanceiro < ActiveRecord::Base
-    belongs_to :tipo_evento_financeiro
-    belongs_to :meio_pagamento
-    belongs_to :periodo_cobranca
-    has_many :pagamentos, dependent: :destroy
+    belongs_to :tipo_evento_financeiro, class_name: "Financeiro::TipoEventoFinanceiro"
+    belongs_to :meio_pagamento, class_name: "Financeiro::MeioPagamento"
+    belongs_to :periodo_cobranca, class_name: "Financeiro::PeriodoCobranca"
+    has_many :pagamentos, class_name: "Financeiro::Pagamento", dependent: :destroy
     
     validates_presence_of :valor, message: "O valor deve ser informado"
     validates_presence_of :tipo_evento_financeiro, message: "Informe o tipo da contribuição"
@@ -44,7 +44,7 @@ module Financeiro
       self.association_class.constantize.find_by(id: self.association_id).pagamento_efetuado
     end
     
-    def association
+    def get_association
       self.association_class.constantize.find_by(id: self.association_id)
     end
     
