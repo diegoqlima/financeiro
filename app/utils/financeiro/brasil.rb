@@ -99,7 +99,6 @@ module Financeiro
         return @errors
       end
     end
-  end
   
   module Remessa
     BRANCO = ""
@@ -209,7 +208,6 @@ module Financeiro
         end
       end
     end
-
   end
-
+  end
 end
