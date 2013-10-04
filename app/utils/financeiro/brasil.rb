@@ -212,5 +212,4 @@ module Financeiro
 
   end
 
-  end
 end
