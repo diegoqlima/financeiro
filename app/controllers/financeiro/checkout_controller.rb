@@ -14,15 +14,23 @@ module Financeiro
       payment.notification_url = config.notification_url if config.present?
       payment.redirect_url = config.redirect_url if config.present?
 
-      if evento_financeiro.get_association.item_pedidos.present?
-        evento_financeiro.get_association.item_pedidos.each do |item|
-          payment.items << {
-            id: item.produto.id,
-            description: item.produto.nome,
-            amount: item.produto.valor.to_f,
-            weight: item.produto.peso.to_i
-          }
+      if(params[:classe] == "Pedido")
+        if evento_financeiro.get_association.item_pedidos.present?
+          evento_financeiro.get_association.item_pedidos.each do |item|
+            payment.items << {
+              id: item.produto.id,
+              description: item.produto.nome,
+              amount: item.produto.valor.to_f,
+              weight: item.produto.peso.to_i
+            }
+          end
         end
+      elsif(params[:classe] == "Formulario")
+        payment.items << {
+          id: evento_financeiro.get_association.id,
+          description: "Inscrição no curso - " + Curso.find(evento_financeiro.get_association.dados["curso_id"]).nome,
+          amount: evento_financeiro.valor.to_f
+        }
       end
 
       response = payment.register
