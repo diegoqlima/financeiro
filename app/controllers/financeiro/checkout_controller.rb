@@ -14,7 +14,7 @@ module Financeiro
       payment.notification_url = config.notification_url if config.present?
       payment.redirect_url = config.redirect_url if config.present?
 
-      if evento_financeiro.get_association.itens.present?
+      if evento_financeiro.get_association.item_pedidos.present?
         evento_financeiro.get_association.item_pedidos.each do |item|
           payment.items << {
             id: item.produto.id,

@@ -44,6 +44,26 @@ module Financeiro
       self.association_class.constantize.find_by(id: self.association_id).pagamento_efetuado
     end
     
+    # Metodo utilizado para notificar o modelo responsavel quando esta aguardando um pagamento
+    def notificar_aguardando_pagamento
+      self.association_class.constantize.find_by(id: self.association_id).aguardando_pagamento
+    end
+    
+    # Metodo utilizado para notificar o modelo responsavel quando um pagamento esta em analise
+    def notificar_pagamento_em_analise
+      self.association_class.constantize.find_by(id: self.association_id).pagamento_em_analise
+    end
+    
+    # Metodo utilizado para notificar o modelo responsavel quando um pagamento esta em disputa
+    def notificar_pagamento_em_disputa
+      self.association_class.constantize.find_by(id: self.association_id).pagamento_em_disputa
+    end
+    
+    # Metodo utilizado para notificar o modelo responsavel quando um pagamento esta estornado
+    def notificar_pagamento_estornado
+      self.association_class.constantize.find_by(id: self.association_id).pagamento_estornado
+    end
+    
     def get_association
       self.association_class.constantize.find_by(id: self.association_id)
     end
