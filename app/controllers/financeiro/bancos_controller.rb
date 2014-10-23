@@ -56,7 +56,7 @@ module Financeiro
 
       # Only allow a trusted parameter "white list" through.
       def banco_params
-        params.require(:banco).permit(:codigo, :nome)
+        params.require(:banco).permit(:codigo, :nome, :codigo_empresa)
       end
   end
 end

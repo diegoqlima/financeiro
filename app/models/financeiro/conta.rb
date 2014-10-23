@@ -14,5 +14,9 @@ module Financeiro
       "Poupança" => "poupanca"
     }
     
+    def contrato_ativo
+      self.contrato_cobrancas.ativos.first if self.contrato_cobrancas.present?
+    end
+    
   end
 end
