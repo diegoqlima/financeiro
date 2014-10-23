@@ -1,34 +1,85 @@
+# encoding: UTF-8
 module Financeiro
   module Bradesco
     module Critica
       STATE = {
-        0 => 'debito_efetuado',
-        1 => 'insuficiencia_fundos',
-        2 => 'conta_corrente_nao_cadastrada',
-        4 => 'outras_restricoes',
-        10 => 'agencia_em_encerramento',
-        12 => 'valor_invalido',
-        13 => 'data_lancamento_invalida',
-        14 => 'agencia_invalida',
-        15 => 'dac_conta_invalida',
-        18 => 'data_debito_anterior_processamento',
-        30 => 'sem_contrato_debito_automatico',
-        96 => 'manutencao_do_cadastro',
-        97 => 'cancelamento_nao_encontrado',
-        98 => 'cancelamento_nao_efetuado',
-        99 => 'cancelado_conforme_soicitacao'
+        2 => "entrada_confirmada",
+        3 => "entrada_rejeitada",
+        6 => "liquidacao_normal",
+        9 => "baixado_automatico_via_arquivo",
+        10 => "baixado_conforme_instrucoes_da_agencia",
+        11 => "em_ser_arquivo_de_titulos_pendentes",
+        12 => "abatimento_concedido",
+        13 => "abatimento_cancelado",
+        14 => "vencimento_alterado",
+        15 => "liquidacao_em_cartorio",
+        16 => "titulo_pago_em_cheque_vinculado",
+        17 => "liquidacao_apos_baixa_ou_titulo_nao_registrado",
+        18 => "acerto_de_depositaria",
+        19 => "confirmacao_receb_inst_de_protesto",
+        20 => "confirmacao_recebimento_instrucao_sustacao_de_protesto",
+        21 => "acerto_do_controle_do_participante",
+        22 => "titulo_com_pagamento_cancelado",
+        23 => "entrada_do_titulo_em_cartorio",
+        24 => "entrada_rejeitada_por_cep_irregular",
+        25 => "confirmacao_receb_inst_de_protesto_falimentar",
+        27 => "baixa_rejeitada",
+        28 => "debito_de_tarifas_custas",
+        29 => "ocorrencias_do Sacado",
+        30 => "alteracao_de_outros_dados_rejeitados",
+        32 => "instrucao_rejeitada",
+        33 => "confirmacao_pedido-alteracao_outros_dados",
+        34 => "retirado_de_cartorio_e_manutencao_carteira",
+        35 => "desagendamento_do_debito_automatico",
+        40 => "estorno_de_pagamento",
+        55 => "sustado_judicial",
+        68 => "acerto_dos_dados_do_rateio_de_credito",
+        69 => "cancelamento_dos_dados_do_rateio"
       }
       REGISTRO = [
         [:codigo_registro,1,:A],
-        [:id_cliente_empresa,25,:A],
-        [:agencia,4,:A],
-        [:id_cliente_banco,14,:A],
-        [:data_vencimento_debito,8,:AAAAMMDD],
-        [:valor_debito,15,:N,2],
-        [:codigo_retorno,2,:A],
-        [:uso_empresa,60,:A],
-        [:filler,20,:A],
-        [:codigo_movimento,1,:N, 0]
+        [:tipo_inscricao_empresa,2,:N,0],
+        [:numero_inscricao_empresa,14,:N,0],
+        [:zeros_1,3,:A],
+        [:id_cliente_banco,17,:A],
+        [:numero_controle_participante,25,:A],
+        [:zeros_2,8,:N],
+        [:id_titulo_banco_1,12,:A], # NOSSO NUEMRO
+        [:uso_banco_1,10,:N,0],
+        [:uso_banco_2,12,:A],
+        [:indicador_rateio_credito,1,:A],
+        [:zeros_3,2,:N,0],
+        [:carteira,1,:N,0],
+        [:id_ocorrencia,2,:N,0],
+        [:data_ocorrencia_banco,6,:DDMMAA],
+        [:numero_documento,10,:A],
+        [:id_titulo_banco_2,20,:A], # NOSSO NUEMRO
+        [:data_vencimento_titulo,6,:DDMMAA],
+        [:valor_titulo,13,:N, 0],
+        [:cod_banco_cobrador,3,:N, 0],
+        [:agencia_cobrador,5,:N, 0],
+        [:especie,2,:A],
+        [:despesa_cobranca,13,:N,0],
+        [:outras_despesas,13,:N,0],
+        [:juros_atraso,13,:N,0],
+        [:iof,13,:N,0],
+        [:abatimento,13,:N,0],
+        [:desconto,13,:N,0],
+        [:valor_pago,13,:N,0],
+        [:juros_mora,13,:N,0],
+        [:outros_creditos,13,:N,0],
+        [:brancos_1,2,:A],
+        [:motivo_codigo_ocorrencia,2,:A],
+        [:data_credito,6,:DDMMAA],
+        [:origem_pagamento,3,:N,0],
+        [:brancos_2,10,:A],
+        [:codigo_banco_cheque,4,:N,0],
+        [:motivo_rejeicao,10,:N,0],
+        [:brancos_3,40,:A],
+        [:numero_cartorio,2,:N,0],
+        [:numero_protocolo,10,:A],
+        [:brancos_4,14,:A],
+        [:numero_sequencial_registro,6,:N,0]
       ]
 
       def pasta
@@ -58,7 +109,7 @@ module Financeiro
            File.open(arquivo,'r').each_line do |line|
               if line =~ /^F/
                 r = parse(line)
-                p = Pagamento.find(r[:uso_empresa].to_i)
+                p = Pagamento.find(r[:id_titulo_banco_1].to_i)
                 puts "******************codigo:#{r[:codigo_retorno]}"
                 p.state = r[:codigo_retorno].to_i
                 p.sub_state = r[:codigo_retorno].to_i
@@ -97,23 +148,25 @@ module Financeiro
         i = 0;
         quantidade_registros = 2
         valor_total = 0
+        aux_first_line = ""
 
         File.open(arquivo,'r').each_line do |line|
           if line.chomp.present? && !line.starts_with?("VALOR")
             # line.strip!
             tipo_registro = line[0...1]
             case tipo_registro
-              when 'A'
-                @errors.push({:i => i, :linha => line, :msg => "Header invalido" }) unless line =~ /A[0-9].{20}.{20}\d{3}.{20}\d{8}\d{6}\d{2}DEBITO AUTOMATICO.{52}/
-              when 'F'
+              when '0'
+                aux_first_line = line
+                # @errors.push({:i => i, :linha => line, :msg => "Header invalido" }) unless line =~ /A[0-9].{20}.{20}\d{3}.{20}\d{8}\d{6}\d{2}DEBITO AUTOMATICO.{52}/
+              when '1'
                   r = parse(line)
                   puts "******************codigo:#{r[:codigo_retorno]}"
                   @errors.push({:i => i, :linha => line, :msg => "Pagamento não encontrado: #{r[:uso_empresa].to_i}"}) unless Pagamento.where("id=?",r[:uso_empresa].to_i).first
                   quantidade_registros+=1
                   valor_total += r[:valor_debito].to_i
-              when 'Z'
-                @errors.push({:i => i, :linha => line, :msg => "Numero de registros no trailer não bate com o numero de registros do arquivo. Esperado:#{line[1..6].to_i}  - Encontrado:#{quantidade_registros}"}) if line[1..6].to_i != quantidade_registros
-                @errors.push({:i => i, :linha => line, :msg => "Valor total dos registros no trailer não bate com soma dos registros do arquivo. Esperado:#{line[7..23].to_i} - Encontrado: #{valor_total}"}) if line[7..23].to_i != valor_total
+              when '9'
+                # @errors.push({:i => i, :linha => line, :msg => "Numero de registros no trailer não bate com o numero de registros do arquivo. Esperado:#{line[1..6].to_i}  - Encontrado:#{quantidade_registros}"}) if line[1..6].to_i != quantidade_registros
+                # @errors.push({:i => i, :linha => line, :msg => "Valor total dos registros no trailer não bate com soma dos registros do arquivo. Esperado:#{line[7..23].to_i} - Encontrado: #{valor_total}"}) if line[7..23].to_i != valor_total
               else
                 @errors.push({:i => 0, :linha => line, :msg => "Tipo de registro desconhecido" })
             end

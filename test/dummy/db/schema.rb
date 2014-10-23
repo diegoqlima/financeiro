@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023122422) do
+ActiveRecord::Schema.define(version: 20141023210344) do
 
   create_table "financeiro_arquivos", force: true do |t|
     t.integer  "tipo_arquivo_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20141023122422) do
     t.string   "instrucoes_sacado"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "local_pagamento"
   end
 
   add_index "financeiro_contas", ["banco_id"], name: "index_financeiro_contas_on_banco_id"
