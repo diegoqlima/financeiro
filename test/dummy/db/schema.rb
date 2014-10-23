@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131003214627) do
+ActiveRecord::Schema.define(version: 20141023122422) do
 
   create_table "financeiro_arquivos", force: true do |t|
     t.integer  "tipo_arquivo_id"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20131003214627) do
     t.string   "nome"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "codigo_empresa"
   end
 
   create_table "financeiro_contas", force: true do |t|
