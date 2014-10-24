@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.0.0"
   s.add_dependency "transitions"
   s.add_dependency "pagseguro-oficial"
+  s.add_dependency "carrierwave"
 
   s.add_development_dependency "sqlite3"
 end

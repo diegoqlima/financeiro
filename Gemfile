@@ -14,3 +14,4 @@ gemspec
 # gem 'debugger'
 
 gem "pagseguro-oficial", git: "git://github.com/pagseguro/ruby.git"
+gem "carrierwave"

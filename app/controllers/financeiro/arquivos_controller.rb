@@ -56,7 +56,7 @@ module Financeiro
 
       # Only allow a trusted parameter "white list" through.
       def arquivo_params
-        params.require(:arquivo).permit(:tipo_arquivo_id, :parametros, :nome)
+        params.require(:arquivo).permit(:tipo_arquivo_id, :parametros, :nome, :data_file)
       end
   end
 end
