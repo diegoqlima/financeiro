@@ -114,6 +114,7 @@ module Financeiro
                 p.state = r[:codigo_retorno].to_i
                 p.sub_state = r[:codigo_retorno].to_i
                 p.registros.create(:objeto => ActiveSupport::JSON.encode(r))
+                p.valor_pago = r[:valor_pago].to_f
                 p.save
               end
             end
