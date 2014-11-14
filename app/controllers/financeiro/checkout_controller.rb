@@ -9,7 +9,7 @@ module Financeiro
       
       config = Financeiro::FinanceiroConfiguracao.first
       
-      payment = PagSeguro::PaymentRequest.new
+      payment = PagSeguro::PaymentRequest.new(email: config.email_pagseguro, token: config.token_pagseguro)
       payment.reference = evento_financeiro.id
       payment.notification_url = config.notification_url if config.present?
       payment.redirect_url = config.redirect_url if config.present?
