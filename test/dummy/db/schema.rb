@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024123303) do
+ActiveRecord::Schema.define(version: 20141204175321) do
 
   create_table "financeiro_arquivos", force: true do |t|
     t.integer  "tipo_arquivo_id"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20141024123303) do
     t.integer  "evento_financeiro_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "valor_pago"
   end
 
   add_index "financeiro_pagamentos", ["evento_financeiro_id"], name: "index_financeiro_pagamentos_on_evento_financeiro_id"
@@ -135,6 +136,11 @@ ActiveRecord::Schema.define(version: 20141024123303) do
     t.string   "descricao"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "instrucao_1"
+    t.string   "instrucao_2"
+    t.string   "instrucao_3"
+    t.string   "instrucao_4"
+    t.string   "instrucao_5"
   end
 
 end
